@@ -1,0 +1,2949 @@
+<title>Scientific References · Amplifier Health</title>
+<style>
+  :root {
+    --paper: #F0EAE0;
+    --ink: #000000;
+    --ink-body: #1A1A1A;
+    --ink-2: #2E2E2E;
+    --ink-mute: #5B5B57;
+    --rule: #000000;
+    --hairline: #D9D2C3;
+    --card: #FFFFFF;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    background: var(--paper);
+    color: var(--ink-body);
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--ink); }
+  .wrap {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 0 24px 120px;
+  }
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 0 18px;
+    border-bottom: 2px solid var(--rule);
+    margin-bottom: 36px;
+  }
+  .brandmark { height: 16px; width: auto; display: block; }
+  .confidential {
+    font-family: "Courier New", monospace;
+    font-size: 8pt;
+    letter-spacing: 0.08em;
+    color: var(--ink-2);
+    text-transform: uppercase;
+  }
+  .eyebrow {
+    font-family: "Courier New", monospace;
+    font-size: 9pt;
+    letter-spacing: 0.1em;
+    color: var(--ink-2);
+    text-transform: uppercase;
+    margin: 0 0 10px;
+  }
+  h1.hero {
+    font-family: Georgia, serif;
+    font-weight: bold;
+    font-size: 34pt;
+    line-height: 1.15;
+    color: var(--ink);
+    margin: 0 0 18px;
+  }
+  p.lede {
+    font-size: 13.5pt;
+    line-height: 1.55;
+    color: var(--ink-body);
+    max-width: 68ch;
+    margin: 0 0 14px;
+  }
+  .meta-row {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+    font-family: "Courier New", monospace;
+    font-size: 9.5pt;
+    letter-spacing: 0.06em;
+    color: var(--ink-2);
+    text-transform: uppercase;
+    margin: 24px 0 8px;
+  }
+  .meta-row strong { color: var(--ink); }
+  hr.rule {
+    border: none;
+    border-top: 2px solid var(--rule);
+    margin: 28px 0 32px;
+  }
+
+  /* table of contents */
+  .toc {
+    background: var(--card);
+    border: 1px solid var(--hairline);
+    padding: 20px 24px;
+    margin-bottom: 48px;
+  }
+  .toc-title {
+    font-family: "Courier New", monospace;
+    font-size: 10pt;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin: 0 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .toc ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    columns: 2;
+    column-gap: 32px;
+  }
+  .toc li {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 6px 0;
+    border-bottom: 1px dotted var(--hairline);
+    break-inside: avoid;
+    font-size: 11pt;
+  }
+  .toc a {
+    text-decoration: none;
+    color: var(--ink-body);
+  }
+  .toc a:hover { text-decoration: underline; }
+  .toc-count {
+    font-family: "Courier New", monospace;
+    font-size: 9pt;
+    color: var(--ink-mute);
+  }
+
+  /* category sections */
+  .category {
+    margin-bottom: 52px;
+    scroll-margin-top: 20px;
+  }
+  .category-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 8px;
+    margin-bottom: 18px;
+  }
+  .category-head h2 {
+    font-family: "Courier New", monospace;
+    font-weight: bold;
+    font-size: 15pt;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin: 0;
+  }
+  .category-count {
+    font-family: "Courier New", monospace;
+    font-size: 9pt;
+    color: var(--ink-mute);
+    white-space: nowrap;
+  }
+  ul.ref-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  li.ref {
+    display: flex;
+    gap: 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--hairline);
+  }
+  .ref-n {
+    font-family: "Courier New", monospace;
+    font-size: 9pt;
+    color: var(--ink-mute);
+    padding-top: 2px;
+    min-width: 28px;
+  }
+  .ref-body { flex: 1; }
+  p.ref-title {
+    font-family: Georgia, serif;
+    font-weight: bold;
+    font-size: 11.5pt;
+    color: var(--ink);
+    margin: 0 0 4px;
+    line-height: 1.4;
+  }
+  p.ref-meta {
+    font-family: Georgia, serif;
+    font-size: 10.5pt;
+    color: var(--ink-2);
+    margin: 0;
+    line-height: 1.5;
+  }
+  .ref-link {
+    font-family: "Courier New", monospace;
+    font-size: 9pt;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 1px;
+    margin-left: 8px;
+    white-space: nowrap;
+  }
+  .ref-link:hover { opacity: 0.6; }
+  .tag {
+    font-family: "Courier New", monospace;
+    font-size: 8.5pt;
+    color: var(--ink-mute);
+  }
+
+  .footnote {
+    margin-top: 56px;
+    padding-top: 18px;
+    border-top: 1px solid var(--hairline);
+    font-size: 9.5pt;
+    color: var(--ink-mute);
+    line-height: 1.6;
+  }
+  footer.page-footer {
+    margin-top: 48px;
+    padding-top: 14px;
+    border-top: 2px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    font-family: "Courier New", monospace;
+    font-size: 8.5pt;
+    letter-spacing: 0.06em;
+    color: var(--ink-2);
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 640px) {
+    .toc ul { columns: 1; }
+    h1.hero { font-size: 26pt; }
+  }
+</style>
+
+<div class="wrap">
+  <div class="topbar">
+    <svg class="brandmark" id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1023.3 279.4" fill="#000000">
+  <path d="M298.9,181.5c0-2.2-1.8-4-4-4h-5.3c-4.3,0-6.5-2.8-6.5-8v-42c0-15.8-8.3-25.3-21.1-25.3s-18.3,6.4-21.8,17.7c-2.3-11.2-9.8-17.7-20.5-17.7s-17.3,5.7-21.1,15.9v-14.6h-22.3c-2.2,0-4,1.8-4,4s1.8,4,4,4h5.3c4.3,0,6.5,2.8,6.5,8v49.9c0,5.2-2.3,8.1-6.5,8.1h-11.3c-6.7,0-9.5-2.3-11.5-7.4l-37.5-101.2-8.8,5.2-31.7,93c-2.6,7.9-6.9,10.3-13.9,10.3h-1.2c-2.2,0-4,1.8-4,4h0c0,2.2,1.8,4,4,4h32.9c2.2,0,4-1.8,4-4s-1.8-4-4-4h-6.5c-5.7,0-6.5-4.3-5.2-8.4l7-21h44.8l7.5,21c1.8,4.9,0,8.4-4.6,8.4h-7.6c-2.2,0-4,1.8-4,4s1.8,4,4,4h72.7c2.2,0,4-1.8,4-4s-1.8-4-4-4h-1.6c-4.2,0-6.5-2.8-6.5-8v-31.4c0-18.2,6.6-27.4,18.7-27.4s13.1,6.7,13.1,17.4v41.4c0,5.2-2.3,8-6.4,8h-1.6c-2.2,0-4,1.8-4,4s1.8,4,4,4h26.3c2.2,0,4-1.8,4-4s-1.8-4-4-4h-1.6c-4.1,0-6.4-2.8-6.4-8v-31.4c0-18.2,6.6-27.4,18.7-27.4s13.1,6.7,13.1,17.4v41.4c0,5.2-2.3,8-6.5,8h-1.6c-2.2,0-4,1.8-4,4s1.8,4,4,4h30.4c2.2,0,4-1.8,4-4ZM136.6,142.5h-40.7l17.3-51.4c.7-1.8,1.1-3.3,2.5-3.3s1.8,1.6,2.5,3.3l18.5,51.4h0Z"></path>
+  <path d="M343.8,102.1c-12.1,0-22.1,6.2-28.5,16.6v-15.3h-22.3c-2.2,0-4,1.8-4,4s1.8,4,4,4h5.3c4.3,0,6.5,2.8,6.5,8v82.1c0,5.3-2.3,8-6.5,8h-5.3c-2.2,0-4,1.8-4,4s1.8,4,4,4h35.5c2.2,0,4-1.8,4-4s-1.8-4-4-4h-6c-4.7,0-7.2-2.8-7.2-8v-31.3c6.2,10,16.4,16.6,28.5,16.6,19.6,0,37.8-18.9,37.8-42.2s-18.2-42.5-37.8-42.5ZM342.5,180.7c-14.9,0-27.2-14.1-27.2-36.1s12.3-36.5,27.2-36.5,25.2,14.8,25.2,36.3-10.3,36.3-25.2,36.3Z"></path>
+  <path d="M552,177.5h-5.3c-4.3,0-6.5-2.8-6.5-8v-66h-52v-8c0-16.9,10-27.9,25.4-27.9s9.3,2.1,9.3,5.9-2.8,3.6-2.8,8.2,3.4,7.7,9,7.7,9.6-4.4,9.6-10.3c0-10.7-10.6-17.2-24.4-17.2-21.8,0-36.7,14.6-36.7,35.8v5.9h-11.9c-2.2,0-4,1.8-4,4s1.8,4,4,4h5.3c4.3,0,6.5,2.8,6.5,8v49.9c0,5.2-2.3,8.1-6.5,8.1h-9.3s-9,0-9,0c-4.2,0-6.5-2.8-6.5-8v-66h-22.3c-2.2,0-4,1.8-4,4s1.8,4,4,4h5.3c4.3,0,6.5,2.8,6.5,8v49.9c0,5.2-2.3,8-6.5,8h-9.3s-9,0-9,0c-4.3,0-6.5-2.8-6.5-8v-103.8h-22.3c-2.2,0-4,1.8-4,4s1.8,4,4,4h5.3c4.3,0,6.5,2.8,6.5,8v87.7c0,5.2-2.3,8-6.5,8h-5.3c-2.2,0-4,1.8-4,4h0c0,2.2,1.8,4,4,4h37.9s42.2,0,42.2,0h0s42.6,0,42.6,0c2.2,0,4-1.8,4-4s-1.8-4-4-4h-7.9c-5.7,0-8.7-2.8-8.7-8v-58h34.2c4.7,0,7.2,2.8,7.2,8v49.9c0,5.2-2.3,8-6.5,8h-5.3c-2.2,0-4,1.8-4,4s1.8,4,4,4h34.4c2.2,0,4-1.8,4-4s-1.8-4-4-4Z"></path>
+  <path d="M594.3,177.1c-16.4,0-26.2-12.8-26.2-33.5s.2-3.9.3-5.6h56c1.5-20.8-9.8-36-30.1-36s-38.5,18.5-38.5,44.2h0c0,24,13.7,40.6,36.2,40.6s29.5-10.8,33.4-30.2l-5.4-1.7c-2.8,12.8-11.5,22.2-25.7,22.2ZM594.1,107.8c11.1,0,18.2,7.7,17.5,24.6h-42.4c2.9-13.9,11.6-24.6,24.9-24.6Z"></path>
+  <path d="M678.2,102.1c-12.4,0-21.3,6.9-25.8,18.6v-17.2h-22.3c-2.2,0-4,1.8-4,4s1.8,4,4,4h5.3c4.3,0,6.5,2.8,6.5,8v49.9c0,5.2-2.3,8.1-6.5,8.1h-5.3c-2.2,0-4,1.8-4,4h0c0,2.2,1.8,4,4,4h38.3c2.2,0,4-1.8,4-4s-1.8-4-4-4h-7.6c-5.6,0-8.4-2.8-8.4-8v-25c0-24.5,11.1-35.3,22.9-35.3s8.2,2.1,8.2,5.6-2.5,4.8-2.5,8.4,3.6,7.4,9,7.4,9.6-4.6,9.6-11.3c0-10.3-9-17.1-21.4-17.1Z"></path>
+  <path d="M426,77.5h16.8c3.2,0,5.7-2.6,5.7-5.7h0c0-3.2-2.6-5.8-5.7-5.8h-16.8c-3.2,0-5.7,2.6-5.7,5.8h0c0,3.2,2.6,5.8,5.7,5.8Z"></path>
+  <path d="M818.4,167.2h-74.2c-5.6,0-10.1,4.5-10.1,10.2s4.5,10.2,10.1,10.2h74.2c5.6,0,10.1-4.5,10.1-10.2s-4.5-10.2-10.1-10.2Z"></path>
+  <path d="M951.5,167.2h-74.2c-5.6,0-10.1,4.5-10.1,10.2s4.5,10.2,10.1,10.2h74.2c5.6,0,10.1-4.5,10.1-10.2s-4.5-10.2-10.1-10.2Z"></path>
+  <path d="M768.8,157.3h156.1c5.6,0,10.1-4.5,10.1-10.2s-4.5-10.2-10.1-10.2h-156.1c-5.6,0-10.1,4.5-10.1,10.2s4.5,10.2,10.1,10.2Z"></path>
+  <path d="M793.4,127h106.9c5.6,0,10.1-4.5,10.1-10.2s-4.5-10.2-10.1-10.2h-106.9c-5.6,0-10.1,4.5-10.1,10.2s4.5,10.2,10.1,10.2Z"></path>
+  <path d="M826.2,96.8h41.4c5.6,0,10.1-4.5,10.1-10.2s-4.5-10.2-10.1-10.2h-41.4c-5.6,0-10.1,4.5-10.1,10.2s4.5,10.2,10.1,10.2Z"></path>
+  <path d="M944.8,120.7h-.7c-.7,0-1.1-.3-1.1-1v-2.3h2c.8,0,1.3.4,1.2,1.4v1.6s0,0,0,0c0,1.2,1,1.7,2,1.7s2-.8,2-2.1v-1.3h-1.1v1.5c0,.3-.2.5-.4.5s-.4-.2-.5-.5l-.2-1.4c-.1-1.1-.6-1.6-1.9-1.8v-.2c1.7-.4,2.4-1.3,2.4-2.4s-1.4-2.5-3.3-2.5h-5.9v1.3h.8c.7,0,1,.3,1,1v5.5c0,.7-.4,1-1,1h-.8v1.3h5.5v-1.3ZM942.9,113h1.9c.9,0,1.5.7,1.5,1.6h0c0,1-.6,1.7-1.5,1.7h-1.9v-3.3Z"></path>
+  <path d="M944.4,126.2c5.3,0,9.4-4.1,9.4-9.3s-4.1-9.3-9.4-9.3-9.4,4.1-9.4,9.3,4.1,9.3,9.4,9.3ZM944.4,108.7c4.5,0,8.1,3.5,8.1,8.2s-3.6,8.2-8.1,8.2-8.1-3.5-8.1-8.2,3.6-8.2,8.1-8.2Z"></path>
+</svg>
+    <span class="confidential">For Scientific &amp; Clinical Reference</span>
+  </div>
+
+  <p class="eyebrow">Voice Biomarkers &middot; Scientific References</p>
+  <h1 class="hero">The research behind voice biomarkers.</h1>
+  <p class="lede">A working bibliography of peer-reviewed literature on vocal and acoustic biomarkers for
+  health, organized from general field reviews through the underlying voice science, the technology
+  that makes it possible, and the clinical conditions where it has been studied. Every entry below is
+  a real, PubMed-indexed publication, linked directly to its PubMed record.</p>
+
+  <div class="meta-row">
+    <span><strong>316</strong> references</span>
+    <span><strong>13</strong> categories</span>
+    <span>Source: PubMed / MEDLINE</span>
+    <span>Compiled October 2026</span>
+  </div>
+
+  <hr class="rule" />
+
+  <nav class="toc">
+    <p class="toc-title">Contents</p>
+    <ul>
+      <li><a href="#general">General · Field Overview</a><span class="toc-count">16</span></li>
+<li><a href="#voice-science">Voice Science · Acoustics &amp; Physiology</a><span class="toc-count">23</span></li>
+<li><a href="#tech">Technology &amp; AI/ML Methods</a><span class="toc-count">26</span></li>
+<li><a href="#depression">Depression &amp; Mood Disorders</a><span class="toc-count">25</span></li>
+<li><a href="#anxiety">Anxiety, Stress &amp; PTSD</a><span class="toc-count">23</span></li>
+<li><a href="#parkinsons">Parkinson's Disease &amp; Movement Disorders</a><span class="toc-count">29</span></li>
+<li><a href="#cognitive">Cognitive Decline, Alzheimer's &amp; Dementia</a><span class="toc-count">30</span></li>
+<li><a href="#respiratory">Respiratory Disease</a><span class="toc-count">30</span></li>
+<li><a href="#cardiovascular">Cardiovascular &amp; Cardiometabolic</a><span class="toc-count">19</span></li>
+<li><a href="#womens-health">Women's Health &amp; Hormonal</a><span class="toc-count">25</span></li>
+<li><a href="#diabetes">Diabetes &amp; Metabolic Disease</a><span class="toc-count">20</span></li>
+<li><a href="#other-neuro">Other Neurological &amp; Psychiatric Conditions</a><span class="toc-count">28</span></li>
+<li><a href="#cancer-pain-fatigue">Cancer, Pain &amp; Fatigue</a><span class="toc-count">22</span></li>
+    </ul>
+  </nav>
+
+  <section class="category" id="general">
+  <div class="category-head">
+    <h2>General · Field Overview</h2>
+    <span class="category-count">16 references</span>
+  </div>
+  <ul class="ref-list">
+    <li class="ref">
+  <span class="ref-n">001</span>
+  <div class="ref-body">
+    <p class="ref-title">Voice for Health: The Use of Vocal Biomarkers from Research to Clinical Practice.</p>
+    <p class="ref-meta">Fagherazzi G, Fischer A, Ismael M, Despotovic V. <em>Digital Biomarkers</em>, 2021. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/34056518/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">002</span>
+  <div class="ref-body">
+    <p class="ref-title">Evaluation of Speech-Based Digital Biomarkers: Review and Recommendations.</p>
+    <p class="ref-meta">Robin J, Harrison JE, Kaufman LD, et al.. <em>Digital Biomarkers</em>, 2020. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/33251474/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">003</span>
+  <div class="ref-body">
+    <p class="ref-title">Speech analysis for health: Current state-of-the-art and the increasing impact of deep learning.</p>
+    <p class="ref-meta">Cummins N, Baird A, Schuller BW. <em>Methods</em>, 2018. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/30099083/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">004</span>
+  <div class="ref-body">
+    <p class="ref-title">Automated assessment of psychiatric disorders using speech: A systematic review.</p>
+    <p class="ref-meta">Low DM, Bentley KH, Ghosh SS. <em>Laryngoscope Investigative Otolaryngology</em>, 2020. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/32128436/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">005</span>
+  <div class="ref-body">
+    <p class="ref-title">Consensus-Based Definitions for Vocal Biomarkers: The International VOCAL Initiative.</p>
+    <p class="ref-meta">Pizzimenti M, Kalia A, Toghranegar JA, et al.. <em>Digital Biomarkers</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42757077/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">006</span>
+  <div class="ref-body">
+    <p class="ref-title">Translating AI research into reality: summary of the 2025 voice AI Symposium and Hackathon.</p>
+    <p class="ref-meta">Salvi Cruz S, Toghranegar J, Malin B, et al.. <em>Frontiers in Digital Health</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41918982/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">007</span>
+  <div class="ref-body">
+    <p class="ref-title">Ethical Considerations for AI-Enabled Voice Analysis: Features of an Emerging Bioethics Literature.</p>
+    <p class="ref-meta">Anzabi MD, Stroud AM, Sharp RR. <em>AJOB Empirical Bioethics</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41793391/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">008</span>
+  <div class="ref-body">
+    <p class="ref-title">The epistemic economy of vocal biomarker startups: a qualitative interview study of data practices and governance.</p>
+    <p class="ref-meta">Yuhan A, Swain S, Zhao R, et al.. <em>Frontiers in Digital Health</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42812383/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">009</span>
+  <div class="ref-body">
+    <p class="ref-title">Voice and speech as digital biomarkers of mental health: a scoping review of clinical interpretability, data collection and translational readiness.</p>
+    <p class="ref-meta">Uy RJ, Shaaban I, Arnaout A. <em>Frontiers in Digital Health</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42898579/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">010</span>
+  <div class="ref-body">
+    <p class="ref-title">Applied Machine Learning Techniques to Diagnose Voice-Affecting Conditions and Disorders: Systematic Literature Review.</p>
+    <p class="ref-meta">Idrisoglu A, et al.. <em>Journal of Medical Internet Research</em>, 2023. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/37467031/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">011</span>
+  <div class="ref-body">
+    <p class="ref-title">Explainable and Interpretable AI for Voice and Speech Analysis in Clinical Care: Systematic Review.</p>
+    <p class="ref-meta">Ebraheem M, et al.. <em>Journal of Medical Internet Research</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42341346/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">012</span>
+  <div class="ref-body">
+    <p class="ref-title">Artificial Intelligence in Voice Disorders: Current Landscape, Emerging Applications and Future Directions.</p>
+    <p class="ref-meta">Kutler RB, Rameau A. <em>World Journal of Otorhinolaryngology – Head and Neck Surgery</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42500063/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">013</span>
+  <div class="ref-body">
+    <p class="ref-title">Voice disorders classification using machine learning: a scoping review.</p>
+    <p class="ref-meta">Gupta R, Jin CT, Gunjawate DR, et al.. <em>Frontiers in Digital Health</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42339003/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">014</span>
+  <div class="ref-body">
+    <p class="ref-title">Collection and Analysis of Repeated Speech Samples: Methodological Framework and Example Protocol.</p>
+    <p class="ref-meta">Cummins N, White LL, Rahman Z, et al.. <em>JMIR Research Protocols</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/40694835/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">015</span>
+  <div class="ref-body">
+    <p class="ref-title">Voice as a predictive signal: protocol for a scoping review of AI in early childhood development.</p>
+    <p class="ref-meta">Amir-Behghadami M, Heidarabadi S. <em>BMJ Open</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42320959/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">016</span>
+  <div class="ref-body">
+    <p class="ref-title">Vocal biomarkers for geriatric health assessment: a scoping review protocol.</p>
+    <p class="ref-meta">Amir-Behghadami M, Gholipour K, Mohammadzadeh Z. <em>BMJ Open</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41730560/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li>
+  </ul>
+</section>
+<section class="category" id="voice-science">
+  <div class="category-head">
+    <h2>Voice Science · Acoustics &amp; Physiology</h2>
+    <span class="category-count">23 references</span>
+  </div>
+  <ul class="ref-list">
+    <li class="ref">
+  <span class="ref-n">017</span>
+  <div class="ref-body">
+    <p class="ref-title">Water limitation modifies vocal performance in California mice: implications for acoustic communication under environmental stress.</p>
+    <p class="ref-meta">Riede T. <em>Journal of Comparative Physiology A</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42888256/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">018</span>
+  <div class="ref-body">
+    <p class="ref-title">Mechanisms of speaker adaptation to semi-occluded vocal tract exercises: Insights from computational phonation modeling.</p>
+    <p class="ref-meta">Zhang Z. <em>The Journal of the Acoustical Society of America</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42820692/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">019</span>
+  <div class="ref-body">
+    <p class="ref-title">Mini-breaths and vocal-fry-like laryngeal register alleviate respiratory constraints on tokay (Gekko gecko) mating vocalizations.</p>
+    <p class="ref-meta">Fuglsang Thastum MS, et al.. <em>Proceedings of the Royal Society B</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42772768/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">020</span>
+  <div class="ref-body">
+    <p class="ref-title">Biomechanical Mechanisms of Vocal Fold Nodule and Polyp Formation: A Review.</p>
+    <p class="ref-meta">Li AR, et al.. <em>Journal of Voice</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42629265/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">021</span>
+  <div class="ref-body">
+    <p class="ref-title">The Effects of Preservation and Structural Rhinoplasty on Voice Parameters.</p>
+    <p class="ref-meta">Kara K, et al.. <em>Journal of Voice</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42888129/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">022</span>
+  <div class="ref-body">
+    <p class="ref-title">Principal dimensions of voice production and their role in vocal expression.</p>
+    <p class="ref-meta">Zhang Z. <em>The Journal of the Acoustical Society of America</em>, 2024. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/38980102/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">023</span>
+  <div class="ref-body">
+    <p class="ref-title">Voice actors show enhanced neural tracking of pitch, prosody perception, and music perception.</p>
+    <p class="ref-meta">Kachlicka M, Tierney A. <em>Cortex</em>, 2024. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/39024939/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">024</span>
+  <div class="ref-body">
+    <p class="ref-title">Algorithmic voice transformations reveal the phonological basis of language-familiarity effects in cross-cultural emotion judgments.</p>
+    <p class="ref-meta">Nakai T, et al.. <em>PLoS One</em>, 2023. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/37134091/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">025</span>
+  <div class="ref-body">
+    <p class="ref-title">Superior Communication of Positive Emotions Through Nonverbal Vocalisations Compared to Speech Prosody.</p>
+    <p class="ref-meta">Kamiloğlu RG, et al.. <em>Journal of Nonverbal Behavior</em>, 2021. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/34744232/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">026</span>
+  <div class="ref-body">
+    <p class="ref-title">Muscular and neuronal control of voice production – forgotten findings, current concepts, and new developments.</p>
+    <p class="ref-meta">Tracicaru RV, et al.. <em>Annals of Anatomy</em>, 2024. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/38763330/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">027</span>
+  <div class="ref-body">
+    <p class="ref-title">Analysis of vibratory mode changes in symmetric and asymmetric activation of the canine larynx.</p>
+    <p class="ref-meta">Schlegel P, et al.. <em>PLoS One</em>, 2022. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/35421159/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">028</span>
+  <div class="ref-body">
+    <p class="ref-title">Hierarchical Classification and System Combination for Automatically Identifying Physiological and Neuromuscular Laryngeal Pathologies.</p>
+    <p class="ref-meta">Cordeiro H, et al.. <em>Journal of Voice</em>, 2016. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/27743845/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">029</span>
+  <div class="ref-body">
+    <p class="ref-title">Predictions of fundamental frequency changes during phonation based on a biomechanical model of the vocal fold lamina propria.</p>
+    <p class="ref-meta">Zhang K, et al.. <em>Journal of Voice</em>, 2008. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/18191379/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">030</span>
+  <div class="ref-body">
+    <p class="ref-title">Human brain activation during phonation and exhalation: common volitional control for two upper airway functions.</p>
+    <p class="ref-meta">Loucks TMJ, et al.. <em>NeuroImage</em>, 2007. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/17428683/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">031</span>
+  <div class="ref-body">
+    <p class="ref-title">Insights on Modelling Physiological, Appraisal, and Affective Indicators of Stress using Audio Features.</p>
+    <p class="ref-meta">Triantafyllopoulos A, et al.. <em>Annual International Conference of the IEEE Engineering in Medicine and Biology Society</em>, 2022. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/36086183/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">032</span>
+  <div class="ref-body">
+    <p class="ref-title">Effects of Mechanical Vibration Stimulation of the Larynx on Voice Production.</p>
+    <p class="ref-meta">Nascimento A, et al.. <em>Journal of Voice</em>, 2021. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/33495035/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">033</span>
+  <div class="ref-body">
+    <p class="ref-title">Segmental vs phrase-level creak in Polish: An acoustic analysis.</p>
+    <p class="ref-meta">Asiaee M, et al.. <em>The Journal of the Acoustical Society of America</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42412617/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">034</span>
+  <div class="ref-body">
+    <p class="ref-title">The evolution of human speech: the role of enhanced breathing control.</p>
+    <p class="ref-meta">MacLarnon AM, Hewitt GP. <em>American Journal of Physical Anthropology</em>, 1999. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/10407464/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">035</span>
+  <div class="ref-body">
+    <p class="ref-title">Computational analysis of asymmetric thyroarytenoid and cricothyroid activation in human phonation.</p>
+    <p class="ref-meta">Sangbori M, et al.. <em>The Journal of the Acoustical Society of America</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42803625/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">036</span>
+  <div class="ref-body">
+    <p class="ref-title">The Effect of Foot Arch Morphology and Plantar Pressure Distribution on Craniovertebral Angle and Acoustic Voice Parameters Across Different Postures.</p>
+    <p class="ref-meta">Sözüçok BA, et al.. <em>Journal of Voice</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42864249/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">037</span>
+  <div class="ref-body">
+    <p class="ref-title">More than just a happy talk? Evidence for functional pitch and utterance length modifications in infant-, spouse-, and dog-directed communication.</p>
+    <p class="ref-meta">Koós-Hutás É, et al.. <em>Journal of Child Language</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/39789773/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">038</span>
+  <div class="ref-body">
+    <p class="ref-title">Fathers' unmodulated prosody in child-directed speech.</p>
+    <p class="ref-meta">Kondaurova MV, et al.. <em>The Journal of the Acoustical Society of America</em>, 2023. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/38038615/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">039</span>
+  <div class="ref-body">
+    <p class="ref-title">Prosodic Differences in the Voices of Transgender and Cisgender Women: Self-Perception of Voice – An Auditory and Acoustic Analysis.</p>
+    <p class="ref-meta">Menezes DP, et al.. <em>Journal of Voice</em>, 2022. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/35135714/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li>
+  </ul>
+</section>
+<section class="category" id="tech">
+  <div class="category-head">
+    <h2>Technology &amp; AI/ML Methods</h2>
+    <span class="category-count">26 references</span>
+  </div>
+  <ul class="ref-list">
+    <li class="ref">
+  <span class="ref-n">040</span>
+  <div class="ref-body">
+    <p class="ref-title">The Sound of Hypnotherapy: Identification of Paralinguistic Speech Features Using Acoustic Analysis and Deep Learning.</p>
+    <p class="ref-meta">Grataloup A, Remacle A. <em>Journal of Voice</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42888125/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">041</span>
+  <div class="ref-body">
+    <p class="ref-title">Cross-sectional stratification of fall-related vulnerability in Parkinson's disease through multimodal fusion of speech, gait, facial expression, and upper-limb movement.</p>
+    <p class="ref-meta">Skaramagkas V, et al.. <em>Frontiers in Digital Health</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42846665/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">042</span>
+  <div class="ref-body">
+    <p class="ref-title">VocaSense-X Framework: Advancing Voice Medicine Through Intelligent Diagnosis and Rehabilitation.</p>
+    <p class="ref-meta">Wu K, Reyes S. <em>Journal of Voice</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42754441/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">043</span>
+  <div class="ref-body">
+    <p class="ref-title">Emotionally engaged speech reveals acoustic markers of depression and suicide risk.</p>
+    <p class="ref-meta">Lin Q, et al.. <em>Journal of Affective Disorders</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42686074/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">044</span>
+  <div class="ref-body">
+    <p class="ref-title">Demographic Confounding in Voice-Based Parkinson Disease Screening: Methodological Analysis of the Bridge2AI Voice Dataset.</p>
+    <p class="ref-meta">Shukla S, et al.. <em>Journal of Medical Internet Research</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42623305/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">045</span>
+  <div class="ref-body">
+    <p class="ref-title">Generating Alzheimer's narratives using large language models.</p>
+    <p class="ref-meta">Perez-Toro PA, et al.. <em>BMC Medical Informatics and Decision Making</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42415081/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">046</span>
+  <div class="ref-body">
+    <p class="ref-title">Exploring GPT-based models for depression detection in adolescents using naturalistic speech: A proof-of-concept study.</p>
+    <p class="ref-meta">Viduani A, et al.. <em>Journal of Affective Disorders</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42134742/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">047</span>
+  <div class="ref-body">
+    <p class="ref-title">A frequency analysis of filterbank initialisation and noise augmentation for LEAF.</p>
+    <p class="ref-meta">Milling M, et al.. <em>Scientific Reports</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42034681/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">048</span>
+  <div class="ref-body">
+    <p class="ref-title">Explainable multimodal feature fusion networks for Parkinson's disease prediction.</p>
+    <p class="ref-meta">Ravichandran A, et al.. <em>Frontiers in Digital Health</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41836340/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">049</span>
+  <div class="ref-body">
+    <p class="ref-title">Artificial intelligence-based speech error detection to differentiate primary progressive aphasia variants.</p>
+    <p class="ref-meta">Vonk JMJ, et al.. <em>Brain Communications</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42798815/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">050</span>
+  <div class="ref-body">
+    <p class="ref-title">Parkinson's disease diagnosis using machine learning and multimodal biomarkers: A systematic review.</p>
+    <p class="ref-meta">Khan MI, et al.. <em>Computational Biology and Chemistry</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42735448/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">051</span>
+  <div class="ref-body">
+    <p class="ref-title">Development and clinical translation of smartphone-based digital biomarkers for Parkinson's disease: a structured review.</p>
+    <p class="ref-meta">Phokaewvarangkul O, et al.. <em>Journal of Neural Transmission</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42696106/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">052</span>
+  <div class="ref-body">
+    <p class="ref-title">Generalization over accuracy: A cross-dataset, explainable, and federated learning framework for Parkinson's disease detection.</p>
+    <p class="ref-meta">Ahammad I. <em>Digital Health</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42427937/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">053</span>
+  <div class="ref-body">
+    <p class="ref-title">A novel multimodal AI framework for early diagnosis of idiopathic Parkinson's disease.</p>
+    <p class="ref-meta">Taşyürek EY, et al.. <em>Medical &amp; Biological Engineering &amp; Computing</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41824227/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">054</span>
+  <div class="ref-body">
+    <p class="ref-title">Prediction of Aspiration Risk by Using Vocal Biomarkers: Machine Learning Development and Validation Study.</p>
+    <p class="ref-meta">Varghese C, et al.. <em>JMIR Formative Research</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41636824/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">055</span>
+  <div class="ref-body">
+    <p class="ref-title">Applications of Artificial Intelligence in Neurological Voice Disorders.</p>
+    <p class="ref-meta">Yao D, et al.. <em>World Journal of Otorhinolaryngology – Head and Neck Surgery</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41477136/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">056</span>
+  <div class="ref-body">
+    <p class="ref-title">Multi-Modal Decentralized Hybrid Learning for Early Parkinson's Detection Using Voice Biomarkers and Contrastive Speech Embeddings.</p>
+    <p class="ref-meta">Alhawiti KM. <em>Sensors (Basel)</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41305166/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">057</span>
+  <div class="ref-body">
+    <p class="ref-title">R-SPEAK, an AI-Based Smartphone App to Enhance Communication in People With Expressive Aphasia: Qualitative Acceptability and Usability Study.</p>
+    <p class="ref-meta">Al-Tamimi AK, et al.. <em>Journal of Medical Internet Research</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42853042/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">058</span>
+  <div class="ref-body">
+    <p class="ref-title">A neural architecture for imagined and overt speech motor dynamics.</p>
+    <p class="ref-meta">Zhao Z, et al.. <em>Nature Neuroscience</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42811118/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">059</span>
+  <div class="ref-body">
+    <p class="ref-title">Optimized Deep Learning for the Classification of Parkinson's Disease Based on Voice Features.</p>
+    <p class="ref-meta">Sharanyaa S, et al.. <em>Critical Reviews in Biomedical Engineering</em>, 2022. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/37075094/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">060</span>
+  <div class="ref-body">
+    <p class="ref-title">A Clinical AI-Based System (MoodMon) for Affective Disorders: Algorithm Development and Validation.</p>
+    <p class="ref-meta">Sokół-Szawłowska M, et al.. <em>JMIR AI</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42684674/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">061</span>
+  <div class="ref-body">
+    <p class="ref-title">MoodMon: novel optimization of bipolar disorder monitoring through patient-driven voice parameter submission and AI technology.</p>
+    <p class="ref-meta">Sokół-Szawłowska M, et al.. <em>Postępy Psychiatrii i Neurologii</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/40070428/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">062</span>
+  <div class="ref-body">
+    <p class="ref-title">Clinical speech AI for schizophrenia: Diagnostic accuracy of speech- and language-based digital biomarkers in a PRISMA-DTA systematic review and meta-analysis.</p>
+    <p class="ref-meta">Tang X, et al.. <em>International Journal of Medical Informatics</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42691873/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">063</span>
+  <div class="ref-body">
+    <p class="ref-title">Artificial intelligence and hearing health: a global evidence review of biases and equity implications for Africa.</p>
+    <p class="ref-meta">Khoza-Shangase K. <em>Global Health Action</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41885802/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">064</span>
+  <div class="ref-body">
+    <p class="ref-title">Domain Adversarial Training for Mitigating Gender Bias in Speech-based Mental Health Detection.</p>
+    <p class="ref-meta">Kim JW, et al.. <em>Annual International Conference of the IEEE Engineering in Medicine and Biology Society</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41335635/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">065</span>
+  <div class="ref-body">
+    <p class="ref-title">Toward demographic robustness in digital patient twins: Addressing the gender data gap.</p>
+    <p class="ref-meta">Mahr D, et al.. <em>Digital Health</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41195379/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li>
+  </ul>
+</section>
+<section class="category" id="depression">
+  <div class="category-head">
+    <h2>Depression &amp; Mood Disorders</h2>
+    <span class="category-count">25 references</span>
+  </div>
+  <ul class="ref-list">
+    <li class="ref">
+  <span class="ref-n">066</span>
+  <div class="ref-body">
+    <p class="ref-title">Voice-Based Screening of Depression and Anxiety Using Machine Learning and Deep Learning: A Scoping Review of Methods and Clinical Readiness.</p>
+    <p class="ref-meta">Muntean-Codrea M, et al.. <em>Life (Basel)</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42795331/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">067</span>
+  <div class="ref-body">
+    <p class="ref-title">The VOICE-DEP study protocol: Multimodal analysis of voice and speech during medical interviews to support diagnosis and longitudinal monitoring of major depressive disorder.</p>
+    <p class="ref-meta">Zabalza-Zudaire M, et al.. <em>PLoS One</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42721164/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">068</span>
+  <div class="ref-body">
+    <p class="ref-title">Validating objective and scalable speech markers of depression across two independent psychiatric cohorts.</p>
+    <p class="ref-meta">Menne F, et al.. <em>Annals of General Psychiatry</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42625173/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">069</span>
+  <div class="ref-body">
+    <p class="ref-title">Depression markers in speech: An approach based on tract variables dynamics.</p>
+    <p class="ref-meta">Altalhi S, et al.. <em>Journal of the Acoustical Society of America</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42390167/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">070</span>
+  <div class="ref-body">
+    <p class="ref-title">Speech as a biomarker for supported diagnosis of major depressive disorder using self-supervised representations.</p>
+    <p class="ref-meta">Lin Y, et al.. <em>Nature Communications</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42297825/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">071</span>
+  <div class="ref-body">
+    <p class="ref-title">The Role of Voice Acoustics in Depression Assessment: Findings From Bibliometric Analysis, Literature Review, and Meta-Analysis.</p>
+    <p class="ref-meta">Cantor-Cutiva LC, et al.. <em>Depression and Anxiety</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42038195/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">072</span>
+  <div class="ref-body">
+    <p class="ref-title">Ecological Momentary Assessment and Voice-Informed Forecast and Detection for the Diagnosis of Major Depression.</p>
+    <p class="ref-meta">Shin D, Kim YK. <em>Advances in Experimental Medicine and Biology</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42036564/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">073</span>
+  <div class="ref-body">
+    <p class="ref-title">Speech analysis for differentiating bipolar disorder and major depressive disorder during euthymic states.</p>
+    <p class="ref-meta">Lai JW, et al.. <em>Annals of General Psychiatry</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41928250/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">074</span>
+  <div class="ref-body">
+    <p class="ref-title">A Decision Support System for Major Depressive Disorder Detection Using EMD and CNN-BiLSTM-Based Analysis of Human Voice.</p>
+    <p class="ref-meta">Gulenc NG, Ozturk M. <em>Journal of Voice</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42527280/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">075</span>
+  <div class="ref-body">
+    <p class="ref-title">Beyond acoustic features: Incorporating linguistic variables in automatic speech analysis for depression detection.</p>
+    <p class="ref-meta">Maran PL, et al.. <em>Journal of Affective Disorders</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41796775/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">076</span>
+  <div class="ref-body">
+    <p class="ref-title">ML-based detection of depressive profile through voice analysis in WhatsApp audio messages of Brazilian Portuguese Speakers.</p>
+    <p class="ref-meta">Otani VHO, et al.. <em>PLOS Mental Health</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41662014/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">077</span>
+  <div class="ref-body">
+    <p class="ref-title">Gaborformer: A method for depression detection through hybrid acoustic feature extraction and fusion.</p>
+    <p class="ref-meta">Zhou L, et al.. <em>Journal of Affective Disorders</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41513150/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">078</span>
+  <div class="ref-body">
+    <p class="ref-title">Automated Speech Analysis for Screening and Monitoring Bipolar Depression: Machine Learning Model Development and Interpretation Study.</p>
+    <p class="ref-meta">Min S, et al.. <em>JMIR Medical Informatics</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41343793/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">079</span>
+  <div class="ref-body">
+    <p class="ref-title">Depression, speech intelligibility, and articulatory coordination.</p>
+    <p class="ref-meta">Espy-Wilson C, et al.. <em>Journal of the Acoustical Society of America</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42112822/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">080</span>
+  <div class="ref-body">
+    <p class="ref-title">Speech-derived acoustic biomarkers for depression: Comprehensive cross-section and longitudinal analyses in different cohorts.</p>
+    <p class="ref-meta">Lin Y, et al.. <em>Journal of Affective Disorders</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41687972/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">081</span>
+  <div class="ref-body">
+    <p class="ref-title">The relationship between cognitive impairment and acoustic features in major depressive disorder: a longitudinal cohort study.</p>
+    <p class="ref-meta">Lin Y, et al.. <em>BMC Psychiatry</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41261424/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">082</span>
+  <div class="ref-body">
+    <p class="ref-title">Voice of Mind, a Deep Learning Model for Depression and Anxiety Assessment From Acoustic and Lexical Vocal Biomarkers.</p>
+    <p class="ref-meta">Regondi S, et al.. <em>Journal of Voice</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/40998607/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">083</span>
+  <div class="ref-body">
+    <p class="ref-title">Unraveling the associations between voice pitch and major depressive disorder: a multisite genetic study.</p>
+    <p class="ref-meta">Di Y, et al.. <em>Molecular Psychiatry</em>, 2024. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/39741179/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">084</span>
+  <div class="ref-body">
+    <p class="ref-title">Digital Markers for Passive Remote Monitoring of Bipolar Disorder: Systematic Review.</p>
+    <p class="ref-meta">Kutcher TP, et al.. <em>JMIR Mental Health</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42594348/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">085</span>
+  <div class="ref-body">
+    <p class="ref-title">Speech and Language Markers of Bipolar Disorder: Challenges and Opportunities.</p>
+    <p class="ref-meta">Zaher F, et al.. <em>Bipolar Disorders</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42360412/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">086</span>
+  <div class="ref-body">
+    <p class="ref-title">Mood states recognition based on Mandarin speech and deep learning in patients with bipolar disorder.</p>
+    <p class="ref-meta">Li J, et al.. <em>BMC Psychiatry</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41286671/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">087</span>
+  <div class="ref-body">
+    <p class="ref-title">Exploring Acoustic Correlates of Depression and Preliminary Screening Models Using XGBoost and SHAP.</p>
+    <p class="ref-meta">Seok KH, et al.. <em>Behavioral Sciences (Basel)</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41463991/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">088</span>
+  <div class="ref-body">
+    <p class="ref-title">Acoustic and Natural Language Markers for Bipolar Disorder: A Pilot, mHealth Cross-Sectional Study.</p>
+    <p class="ref-meta">Crocamo C, et al.. <em>JMIR Formative Research</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/40239203/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">089</span>
+  <div class="ref-body">
+    <p class="ref-title">Affective Computing for Late-Life Mood and Cognitive Disorders.</p>
+    <p class="ref-meta">Smith E, et al.. <em>Frontiers in Psychiatry</em>, 2021. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/35002802/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">090</span>
+  <div class="ref-body">
+    <p class="ref-title">Enhanced classification and severity prediction of major depressive disorder using acoustic features and machine learning.</p>
+    <p class="ref-meta">Liang L, et al.. <em>Frontiers in Psychiatry</em>, 2024. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/39355380/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li>
+  </ul>
+</section>
+<section class="category" id="anxiety">
+  <div class="category-head">
+    <h2>Anxiety, Stress &amp; PTSD</h2>
+    <span class="category-count">23 references</span>
+  </div>
+  <ul class="ref-list">
+    <li class="ref">
+  <span class="ref-n">091</span>
+  <div class="ref-body">
+    <p class="ref-title">Cross-sectional and longitudinal associations between anxiety and acoustic-prosodic markers in adolescents.</p>
+    <p class="ref-meta">Ciampelli S, et al.. <em>Psychological Medicine</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41147220/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">092</span>
+  <div class="ref-body">
+    <p class="ref-title">Automated Speech Analysis for Risk Detection of Depression, Anxiety, Insomnia, and Fatigue: Algorithm Development and Validation Study.</p>
+    <p class="ref-meta">Riad R, et al.. <em>Journal of Medical Internet Research</em>, 2024. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/39324329/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">093</span>
+  <div class="ref-body">
+    <p class="ref-title">Feasibility of a Machine Learning-Based Smartphone Application in Detecting Depression and Anxiety in a Generally Senior Population.</p>
+    <p class="ref-meta">Lin D, et al.. <em>Frontiers in Psychology</em>, 2022. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/35478769/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">094</span>
+  <div class="ref-body">
+    <p class="ref-title">Giving Voice to Vulnerable Children: Machine Learning Analysis of Speech Detects Anxiety and Depression in Early Childhood.</p>
+    <p class="ref-meta">McGinnis EW, et al.. <em>IEEE Journal of Biomedical and Health Informatics</em>, 2019. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/31034426/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">095</span>
+  <div class="ref-body">
+    <p class="ref-title">Recognizing anxiety and depression in cancer patients based on speech and facial expressions.</p>
+    <p class="ref-meta">Xu N, et al.. <em>Frontiers in Psychiatry</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42221319/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">096</span>
+  <div class="ref-body">
+    <p class="ref-title">Stress measurement using speech: Recent advancements, validation issues, and ethical and privacy considerations.</p>
+    <p class="ref-meta">Slavich GM, et al.. <em>Stress (Amsterdam)</em>, 2019. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/30945584/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">097</span>
+  <div class="ref-body">
+    <p class="ref-title">Human Stress Detection: Cortisol Levels in Stressed Speakers Predict Voice-Based Judgments of Stress.</p>
+    <p class="ref-meta">Pisanski K, Sorokowski P. <em>Perception</em>, 2020. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/33302780/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">098</span>
+  <div class="ref-body">
+    <p class="ref-title">Individual differences in cortisol stress response predict increases in voice pitch during exam stress.</p>
+    <p class="ref-meta">Pisanski K, et al.. <em>Physiology &amp; Behavior</em>, 2016. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/27188981/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">099</span>
+  <div class="ref-body">
+    <p class="ref-title">Aerodynamic and Acoustic Voice Measures Before and After an Acute Public Speaking Stressor.</p>
+    <p class="ref-meta">Perrine BL, Scherer RC. <em>Journal of Speech, Language, and Hearing Research</em>, 2020. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/32916082/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">100</span>
+  <div class="ref-body">
+    <p class="ref-title">The Fundamental Frequency of Voice as a Potential Stress Biomarker: A Systematic Review and Meta-Analysis.</p>
+    <p class="ref-meta">Veiga DL, et al.. <em>Stress and Health</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41102940/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">101</span>
+  <div class="ref-body">
+    <p class="ref-title">Novel Deep Learning-Based Vocal Biomarkers for Stress Detection in Koreans.</p>
+    <p class="ref-meta">Namkung J, et al.. <em>Psychiatry Investigation</em>, 2024. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/39610234/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">102</span>
+  <div class="ref-body">
+    <p class="ref-title">Using Vocal Characteristics To Classify Psychological Distress in Adult Helpline Callers: Retrospective Observational Study.</p>
+    <p class="ref-meta">Iyer R, et al.. <em>JMIR Formative Research</em>, 2022. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/36534456/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">103</span>
+  <div class="ref-body">
+    <p class="ref-title">Psychosocial Stress in the Chinese Community: Speech Analytics Through Linguistic and Acoustic Fusion Using Machine Learning.</p>
+    <p class="ref-meta">Chu AMY, et al.. <em>JMIR Biomedical Engineering</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42214077/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">104</span>
+  <div class="ref-body">
+    <p class="ref-title">Daily stress detection from real-life speeches using acoustic and semantic information.</p>
+    <p class="ref-meta">Lu P, et al.. <em>Ergonomics</em>, 2024. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/39585314/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">105</span>
+  <div class="ref-body">
+    <p class="ref-title">Acoustic speech features in social comparison: how stress impacts the way you sound.</p>
+    <p class="ref-meta">Kappen M, et al.. <em>Scientific Reports</em>, 2022. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/36539505/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">106</span>
+  <div class="ref-body">
+    <p class="ref-title">Voice Signatures of Momentary Psychological Stress in Real-Life Environments: Results from the Colive Voice Study.</p>
+    <p class="ref-meta">Topalian N, et al.. <em>Digital Biomarkers</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41938599/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">107</span>
+  <div class="ref-body">
+    <p class="ref-title">Emotional Prosody Measurement (EPM): a voice-based evaluation method for psychological therapy effectiveness.</p>
+    <p class="ref-meta">van den Broek EL. <em>Studies in Health Technology and Informatics</em>, 2004. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/15747913/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">108</span>
+  <div class="ref-body">
+    <p class="ref-title">Using speech analysis in virtual agent conversations to differentiate PTSD patients from control participants.</p>
+    <p class="ref-meta">Menne F, et al.. <em>Psychiatry Research</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/40203639/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">109</span>
+  <div class="ref-body">
+    <p class="ref-title">An Emotion-Driven Vocal Biomarker-Based PTSD Screening Tool.</p>
+    <p class="ref-meta">Quatieri TF, et al.. <em>IEEE Open Journal of Engineering in Medicine and Biology</em>, 2023. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/39184968/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">110</span>
+  <div class="ref-body">
+    <p class="ref-title">Deep learning-based classification of posttraumatic stress disorder and depression following trauma utilizing visual and auditory markers of arousal and mood.</p>
+    <p class="ref-meta">Schultebraucks K, et al.. <em>Psychological Medicine</em>, 2020. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/32744201/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">111</span>
+  <div class="ref-body">
+    <p class="ref-title">Study protocol: how does parental stress measured by clinical scales and voice acoustic stress markers predict children's response to PTSD trauma-focused therapies?.</p>
+    <p class="ref-meta">Zeghari R, et al.. <em>BMJ Open</em>, 2023. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/37160398/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">112</span>
+  <div class="ref-body">
+    <p class="ref-title">Comprehension of affective prosody in veterans with chronic posttraumatic stress disorder.</p>
+    <p class="ref-meta">Freeman TW, et al.. <em>The Journal of Neuropsychiatry and Clinical Neurosciences</em>, 2009. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/19359452/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">113</span>
+  <div class="ref-body">
+    <p class="ref-title">Study of agency in the discourse of women suffering from post-traumatic stress disorder in the aftermath of domestic violence.</p>
+    <p class="ref-meta">Frabetti M, et al.. <em>L'Encéphale</em>, 2022. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/36257851/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li>
+  </ul>
+</section>
+<section class="category" id="parkinsons">
+  <div class="category-head">
+    <h2>Parkinson's Disease &amp; Movement Disorders</h2>
+    <span class="category-count">29 references</span>
+  </div>
+  <ul class="ref-list">
+    <li class="ref">
+  <span class="ref-n">114</span>
+  <div class="ref-body">
+    <p class="ref-title">Robust Detection of Parkinson's Disease Using Harvested Smartphone Voice Data: A Telemedicine Approach.</p>
+    <p class="ref-meta">Singh S, Xu W. <em>Telemedicine and e-Health</em>, 2019. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/31033397/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">115</span>
+  <div class="ref-body">
+    <p class="ref-title">Investigating voice as a biomarker: Deep phenotyping methods for early detection of Parkinson's disease.</p>
+    <p class="ref-meta">Tracy JM, et al.. <em>Journal of Biomedical Informatics</em>, 2019. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/31866434/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">116</span>
+  <div class="ref-body">
+    <p class="ref-title">Transformer-based transfer learning on self-reported voice recordings for Parkinson's disease diagnosis.</p>
+    <p class="ref-meta">Tougui I, et al.. <em>Scientific Reports</em>, 2024. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/39627487/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">117</span>
+  <div class="ref-body">
+    <p class="ref-title">An Explainable Ensemble and Deep Learning Framework for Accurate and Interpretable Parkinson's Disease Detection from Voice Biomarkers.</p>
+    <p class="ref-meta">Aladhadh S. <em>Diagnostics (Basel)</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41300916/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">118</span>
+  <div class="ref-body">
+    <p class="ref-title">Voice biomarkers as prognostic indicators for Parkinson's disease using machine learning techniques.</p>
+    <p class="ref-meta">Naeem I, et al.. <em>Scientific Reports</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/40204799/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">119</span>
+  <div class="ref-body">
+    <p class="ref-title">Vocal Biomarkers for Parkinson's Disease Classification Using Audio Spectrogram Transformers.</p>
+    <p class="ref-meta">Madusanka N, Lee BI. <em>Journal of Voice</em>, 2024. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/39665946/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">120</span>
+  <div class="ref-body">
+    <p class="ref-title">From prodromal stages to clinical trials: The promise of digital speech biomarkers in Parkinson's disease.</p>
+    <p class="ref-meta">Rusz J, et al.. <em>Neuroscience &amp; Biobehavioral Reviews</em>, 2024. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/39424108/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">121</span>
+  <div class="ref-body">
+    <p class="ref-title">Speech and language biomarkers for Parkinson's disease prediction, early diagnosis and progression.</p>
+    <p class="ref-meta">Cao F, et al.. <em>npj Parkinson's Disease</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/40128529/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">122</span>
+  <div class="ref-body">
+    <p class="ref-title">Voice Analysis to Differentiate the Dopaminergic Response in People With Parkinson's Disease.</p>
+    <p class="ref-meta">Jain A, et al.. <em>Frontiers in Human Neuroscience</em>, 2021. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/34135742/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">123</span>
+  <div class="ref-body">
+    <p class="ref-title">Vocal Biomarkers for Parkinson's Disease Classification through Hybrid Feature Selection with Beluga Whale Optimization.</p>
+    <p class="ref-meta">Ganesan U, et al.. <em>Journal of Voice</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41274811/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">124</span>
+  <div class="ref-body">
+    <p class="ref-title">Explainable artificial intelligence to diagnose early Parkinson's disease via voice analysis.</p>
+    <p class="ref-meta">Shen M, et al.. <em>Scientific Reports</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/40188263/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">125</span>
+  <div class="ref-body">
+    <p class="ref-title">Speech Biomarkers From Smartphone Calls Track Progression in REM Sleep Behavior Disorder and Parkinson's Disease.</p>
+    <p class="ref-meta">Šimek M, et al.. <em>Annals of Neurology</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41467327/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">126</span>
+  <div class="ref-body">
+    <p class="ref-title">Explainable machine learning for early detection of Parkinson's disease in aging populations using vocal biomarkers.</p>
+    <p class="ref-meta">Egbo B, et al.. <em>Frontiers in Aging Neuroscience</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/40979153/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">127</span>
+  <div class="ref-body">
+    <p class="ref-title">Machine learning-based classification of Parkinson's disease using acoustic features: Insights from multilingual speech tasks.</p>
+    <p class="ref-meta">Jeong SM, et al.. <em>Computers in Biology and Medicine</em>, 2024. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/39265476/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">128</span>
+  <div class="ref-body">
+    <p class="ref-title">Machine Learning-Assisted Speech Analysis for Early Detection of Parkinson's Disease: A Study on Speaker Diarization and Classification Techniques.</p>
+    <p class="ref-meta">Di Cesare MG, et al.. <em>Sensors (Basel)</em>, 2024. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/38475034/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">129</span>
+  <div class="ref-body">
+    <p class="ref-title">Analysis of spontaneous speech in Parkinson's disease by natural language processing.</p>
+    <p class="ref-meta">Yokoi K, et al.. <em>Parkinsonism &amp; Related Disorders</em>, 2023. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/37179151/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">130</span>
+  <div class="ref-body">
+    <p class="ref-title">Utilizing speech analysis to differentiate progressive supranuclear palsy from Parkinson's disease.</p>
+    <p class="ref-meta">Kang K, et al.. <em>Parkinsonism &amp; Related Disorders</em>, 2023. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/37678101/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">131</span>
+  <div class="ref-body">
+    <p class="ref-title">Voice analysis in Parkinson's disease – a systematic literature review.</p>
+    <p class="ref-meta">Xavier D, et al.. <em>Artificial Intelligence in Medicine</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/40132400/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">132</span>
+  <div class="ref-body">
+    <p class="ref-title">Gradient boosting for Parkinson's disease diagnosis from voice recordings.</p>
+    <p class="ref-meta">Karabayir I, et al.. <em>BMC Medical Informatics and Decision Making</em>, 2020. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/32933493/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">133</span>
+  <div class="ref-body">
+    <p class="ref-title">Multimodal Assessment of Parkinson's Disease: A Deep Learning Approach.</p>
+    <p class="ref-meta">Vasquez-Correa JC, et al.. <em>IEEE Journal of Biomedical and Health Informatics</em>, 2018. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/30137018/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">134</span>
+  <div class="ref-body">
+    <p class="ref-title">Parkinson's disease or atypical parkinsonism? The importance of acoustic voice analysis in differential diagnosis of speech disorders.</p>
+    <p class="ref-meta">Kowalska-Taczanowska R, et al.. <em>Brain and Behavior</em>, 2020. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/32525283/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">135</span>
+  <div class="ref-body">
+    <p class="ref-title">Speech disorders in Parkinson's disease: early diagnostics and effects of medication and brain stimulation.</p>
+    <p class="ref-meta">Brabenec L, et al.. <em>Journal of Neural Transmission</em>, 2017. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/28101650/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">136</span>
+  <div class="ref-body">
+    <p class="ref-title">Vowel articulation in Parkinson's disease.</p>
+    <p class="ref-meta">Skodda S, et al.. <em>Journal of Voice</em>, 2010. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/20434876/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">137</span>
+  <div class="ref-body">
+    <p class="ref-title">Automated speech analysis in early untreated Parkinson's disease: Relation to gender and dopaminergic transporter imaging.</p>
+    <p class="ref-meta">Rusz J, et al.. <em>European Journal of Neurology</em>, 2021. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/34498329/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">138</span>
+  <div class="ref-body">
+    <p class="ref-title">Acoustic investigation of stress patterns in Parkinson's disease.</p>
+    <p class="ref-meta">Tykalova T, et al.. <em>Journal of Voice</em>, 2013. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/24094802/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">139</span>
+  <div class="ref-body">
+    <p class="ref-title">Speech acoustic indices for differential diagnosis between Parkinson's disease, multiple system atrophy and progressive supranuclear palsy.</p>
+    <p class="ref-meta">Daoudi K, et al.. <em>npj Parkinson's Disease</em>, 2022. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/36302780/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">140</span>
+  <div class="ref-body">
+    <p class="ref-title">Automated analysis of spoken language differentiates multiple system atrophy from Parkinson's disease.</p>
+    <p class="ref-meta">Šubert M, et al.. <em>Journal of Neurology</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/39812820/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">141</span>
+  <div class="ref-body">
+    <p class="ref-title">Vocal Feature Changes for Monitoring Parkinson's Disease Progression – A Systematic Review.</p>
+    <p class="ref-meta">Wright H, Aharonson V. <em>Brain Sciences</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/40149841/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">142</span>
+  <div class="ref-body">
+    <p class="ref-title">Mixed kernel SVR addressing Parkinson's progression from voice features.</p>
+    <p class="ref-meta">Bárcenas R, et al.. <em>PLoS One</em>, 2022. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/36206238/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li>
+  </ul>
+</section>
+<section class="category" id="cognitive">
+  <div class="category-head">
+    <h2>Cognitive Decline, Alzheimer's &amp; Dementia</h2>
+    <span class="category-count">30 references</span>
+  </div>
+  <ul class="ref-list">
+    <li class="ref">
+  <span class="ref-n">143</span>
+  <div class="ref-body">
+    <p class="ref-title">Ten Years of Research on Automatic Voice and Speech Analysis of People With Alzheimer's Disease and Mild Cognitive Impairment: A Systematic Review Article.</p>
+    <p class="ref-meta">Martínez-Nicolás I, et al.. <em>Frontiers in Psychology</em>, 2021. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/33833713/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">144</span>
+  <div class="ref-body">
+    <p class="ref-title">A systematic literature review of automatic Alzheimer's disease detection from speech and language.</p>
+    <p class="ref-meta">Petti U, et al.. <em>Journal of the American Medical Informatics Association</em>, 2020. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/32929494/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">145</span>
+  <div class="ref-body">
+    <p class="ref-title">Acoustic Speech Analysis in Alzheimer's Disease: A Systematic Review and Meta-Analysis.</p>
+    <p class="ref-meta">Saeedi S, et al.. <em>The Journal of Prevention of Alzheimer's Disease</em>, 2024. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/39559890/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">146</span>
+  <div class="ref-body">
+    <p class="ref-title">An Overview of the ADReSS-M Signal Processing Grand Challenge on Multilingual Alzheimer's Dementia Recognition Through Spontaneous Speech.</p>
+    <p class="ref-meta">Luz S, et al.. <em>IEEE Open Journal of Signal Processing</em>, 2024. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/38957540/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">147</span>
+  <div class="ref-body">
+    <p class="ref-title">Acoustic and Language Based Deep Learning Approaches for Alzheimer's Dementia Detection From Spontaneous Speech.</p>
+    <p class="ref-meta">Mahajan P, Baths V. <em>Frontiers in Aging Neuroscience</em>, 2021. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/33613269/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">148</span>
+  <div class="ref-body">
+    <p class="ref-title">Speech Analysis by Natural Language Processing Techniques: A Possible Tool for Very Early Detection of Cognitive Decline?.</p>
+    <p class="ref-meta">Beltrami D, et al.. <em>Frontiers in Aging Neuroscience</em>, 2018. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/30483116/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">149</span>
+  <div class="ref-body">
+    <p class="ref-title">Natural language processing techniques for studying language in pathological ageing: A scoping review.</p>
+    <p class="ref-meta">Gagliardi G. <em>International Journal of Language &amp; Communication Disorders</em>, 2023. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/36960885/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">150</span>
+  <div class="ref-body">
+    <p class="ref-title">Detecting Alzheimer's Disease Using Natural Language Processing of Referential Communication Task Transcripts.</p>
+    <p class="ref-meta">Liu N, et al.. <em>Journal of Alzheimer's Disease</em>, 2022. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/35213368/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">151</span>
+  <div class="ref-body">
+    <p class="ref-title">How to do things with (thousands of) words: Computational approaches to discourse analysis in Alzheimer's disease.</p>
+    <p class="ref-meta">Clarke N, Foltz P, Garrard P. <em>Cortex</em>, 2020. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/32622173/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">152</span>
+  <div class="ref-body">
+    <p class="ref-title">Enhancing dementia and cognitive decline detection with large language models and speech representation learning.</p>
+    <p class="ref-meta">Chlasta K, Struzik Z, Wójcik GM. <em>Frontiers in Neuroinformatics</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41424457/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">153</span>
+  <div class="ref-body">
+    <p class="ref-title">AI-based assessments of speech and language impairments in dementia.</p>
+    <p class="ref-meta">Parsapoor M. <em>Alzheimer's &amp; Dementia</em>, 2023. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/37578167/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">154</span>
+  <div class="ref-body">
+    <p class="ref-title">Automated Speech Markers of Alzheimer Dementia: Test of Cross-Linguistic Generalizability.</p>
+    <p class="ref-meta">Pérez-Toro PA, et al.. <em>Journal of Medical Internet Research</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41091545/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">155</span>
+  <div class="ref-body">
+    <p class="ref-title">Linking silent pause locations in speech to amyloid and tau deposition in cognitively unimpaired individuals.</p>
+    <p class="ref-meta">Hale C, et al.. <em>Journal of Alzheimer's Disease</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/40934091/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">156</span>
+  <div class="ref-body">
+    <p class="ref-title">Automated detection of progressive speech changes in early Alzheimer's disease.</p>
+    <p class="ref-meta">Robin J, et al.. <em>Alzheimer's &amp; Dementia (Amsterdam)</em>, 2023. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/37361261/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">157</span>
+  <div class="ref-body">
+    <p class="ref-title">Natural speech markers of Alzheimer's disease co-pathology in Lewy body dementias.</p>
+    <p class="ref-meta">Shellikeri S, et al.. <em>Parkinsonism &amp; Related Disorders</em>, 2022. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/35985146/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">158</span>
+  <div class="ref-body">
+    <p class="ref-title">Longitudinal observational cohort study: Speech for Intelligent cognition change tracking and DEtection of Alzheimer's Disease (SIDE-AD).</p>
+    <p class="ref-meta">Saunders S, et al.. <em>BMJ Open</em>, 2024. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/38548356/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">159</span>
+  <div class="ref-body">
+    <p class="ref-title">Smartphone automated motor and speech analysis for early detection of Alzheimer's disease and Parkinson's disease: Validation of TapTalk across 20 different devices.</p>
+    <p class="ref-meta">Li M, et al.. <em>Alzheimer's &amp; Dementia (Amsterdam)</em>, 2024. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/39445342/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">160</span>
+  <div class="ref-body">
+    <p class="ref-title">Digital detection of Alzheimer's disease using smiles and conversations with a chatbot.</p>
+    <p class="ref-meta">Takeshige-Amano H, et al.. <em>Scientific Reports</em>, 2024. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/39487204/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">161</span>
+  <div class="ref-body">
+    <p class="ref-title">Speech digital biomarker combined with fluid biomarkers predict cognitive impairment through machine learning.</p>
+    <p class="ref-meta">Wang Y, et al.. <em>Alzheimer's Research &amp; Therapy</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41121436/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">162</span>
+  <div class="ref-body">
+    <p class="ref-title">Screening for early Alzheimer's disease: enhancing diagnosis with linguistic features and biomarkers.</p>
+    <p class="ref-meta">Chou CY, et al.. <em>Frontiers in Aging Neuroscience</em>, 2024. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/39376506/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">163</span>
+  <div class="ref-body">
+    <p class="ref-title">Cognitive and Structural Correlates of Conversational Speech Timing in Mild Cognitive Impairment and Mild-to-Moderate Alzheimer's Disease: Relevance for Early Detection Approaches.</p>
+    <p class="ref-meta">De Looze C, et al.. <em>Frontiers in Aging Neuroscience</em>, 2021. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/33986656/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">164</span>
+  <div class="ref-body">
+    <p class="ref-title">Natural language processing-based classification of early Alzheimer's disease from connected speech.</p>
+    <p class="ref-meta">Balabin H, et al.. <em>Alzheimer's &amp; Dementia</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/39868827/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">165</span>
+  <div class="ref-body">
+    <p class="ref-title">Speech-based digital biomarkers for early etiological stratification of Alzheimer's disease and frontotemporal degeneration: a biomarker-confirmed prospective study.</p>
+    <p class="ref-meta">Da Cunha G, et al.. <em>The Journal of Prevention of Alzheimer's Disease</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42000570/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">166</span>
+  <div class="ref-body">
+    <p class="ref-title">Discrimination of mild cognitive impairment based on involuntary changes caused in voice elements.</p>
+    <p class="ref-meta">Higuchi M, et al.. <em>Frontiers in Neurology</em>, 2023. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/37416305/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">167</span>
+  <div class="ref-body">
+    <p class="ref-title">Voice Markers of Lexical Access in Mild Cognitive Impairment and Alzheimer's Disease.</p>
+    <p class="ref-meta">Meilan JJG, et al.. <em>Current Alzheimer Research</em>, 2018. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/28847280/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">168</span>
+  <div class="ref-body">
+    <p class="ref-title">Voice quality and speech fluency distinguish individuals with Mild Cognitive Impairment from Healthy Controls.</p>
+    <p class="ref-meta">Themistocleous C, Eckerström M, Kokkinakis D. <em>PLoS One</em>, 2020. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/32658934/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">169</span>
+  <div class="ref-body">
+    <p class="ref-title">Novel Screening Tool Using Non-linguistic Voice Features Derived from Simple Phrases to Detect Mild Cognitive Impairment and Dementia.</p>
+    <p class="ref-meta">Mizuguchi T, et al.. <em>JAR Life</em>, 2023. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/37637273/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">170</span>
+  <div class="ref-body">
+    <p class="ref-title">Reading and lexical-semantic retrieval tasks outperforms single task speech analysis in the screening of mild cognitive impairment and Alzheimer's disease.</p>
+    <p class="ref-meta">Martínez-Nicolás I, et al.. <em>Scientific Reports</em>, 2023. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/37322073/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">171</span>
+  <div class="ref-body">
+    <p class="ref-title">A novel speech analysis algorithm to detect cognitive impairment in a Spanish population.</p>
+    <p class="ref-meta">Kaser A, et al.. <em>Frontiers in Neurology</em>, 2024. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/38638311/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">172</span>
+  <div class="ref-body">
+    <p class="ref-title">Harnessing acoustic speech parameters to decipher amyloid status in individuals with mild cognitive impairment.</p>
+    <p class="ref-meta">García-Gutiérrez A, et al.. <em>Frontiers in Neuroscience</em>, 2023. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/37746151/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li>
+  </ul>
+</section>
+<section class="category" id="respiratory">
+  <div class="category-head">
+    <h2>Respiratory Disease</h2>
+    <span class="category-count">30 references</span>
+  </div>
+  <ul class="ref-list">
+    <li class="ref">
+  <span class="ref-n">173</span>
+  <div class="ref-body">
+    <p class="ref-title">Restoring Over-Attenuated Sustained Vowel Phonations in Smartphone Calls of COPD Patients Using U-Net and Speech Foundation Models.</p>
+    <p class="ref-meta">Lee H, et al.. <em>Journal of Voice</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42443029/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">174</span>
+  <div class="ref-body">
+    <p class="ref-title">Identification of individuals with COPD using biometric voice and cough sound features.</p>
+    <p class="ref-meta">Obase Y, et al.. <em>Respiratory Investigation</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41389529/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">175</span>
+  <div class="ref-body">
+    <p class="ref-title">Feature Analysis of the Vowel [a:] in Individuals With Chronic Obstructive Pulmonary Disease and Healthy Controls.</p>
+    <p class="ref-meta">Idrisoglu A, et al.. <em>Journal of Voice</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41168019/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">176</span>
+  <div class="ref-body">
+    <p class="ref-title">Respiratory-Responsive Vocal Biomarker for Asthma Exacerbation Monitoring: Prospective Cohort Study.</p>
+    <p class="ref-meta">Larsen E, et al.. <em>Journal of Medical Internet Research</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/40986855/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">177</span>
+  <div class="ref-body">
+    <p class="ref-title">Artificial Intelligence Powered Audiomics: The Futuristic Biomarker in Pulmonary Medicine – A State-of-the-Art Review.</p>
+    <p class="ref-meta">Rajasekar SJS, et al.. <em>Studies in Health Technology and Informatics</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/40380599/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">178</span>
+  <div class="ref-body">
+    <p class="ref-title">Developing a multi-feature fusion model for exacerbation classification in asthma and COPD.</p>
+    <p class="ref-meta">Yan Y, et al.. <em>Computer Methods and Programs in Biomedicine</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/40347619/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">179</span>
+  <div class="ref-body">
+    <p class="ref-title">Maximum Phonation Times as Biomarkers of Lung Function.</p>
+    <p class="ref-meta">Feltrin TD, et al.. <em>Journal of Voice</em>, 2024. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/38331702/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">180</span>
+  <div class="ref-body">
+    <p class="ref-title">Development and Validation of a Respiratory-Responsive Vocal Biomarker-Based Tool for Generalizable Detection of Respiratory Impairment: Independent Case-Control Studies in Multiple Respiratory Conditions Including Asthma, COPD, and COVID-19.</p>
+    <p class="ref-meta">Kaur S, et al.. <em>Journal of Medical Internet Research</em>, 2023. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/36881540/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">181</span>
+  <div class="ref-body">
+    <p class="ref-title">Respiratory Disease Detection: A Systematic Review of AI-Based Approaches, from Audio and Visual Unimodal Methods to Multimodal Integration.</p>
+    <p class="ref-meta">Shati A, et al.. <em>Diagnostics (Basel)</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42351549/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">182</span>
+  <div class="ref-body">
+    <p class="ref-title">On-device cough detection and respiratory disease classification enhanced by generative data augmentation.</p>
+    <p class="ref-meta">Kontogiannis G, et al.. <em>Computers in Biology and Medicine</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42229246/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">183</span>
+  <div class="ref-body">
+    <p class="ref-title">A Generative AI-Based Framework for COVID-19 Screening from Cough Audio Signals.</p>
+    <p class="ref-meta">Jagadish M, Mohanty SN. <em>Journal of Visualized Experiments</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41911284/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">184</span>
+  <div class="ref-body">
+    <p class="ref-title">Advanced COVID-19 detection using cough signals with space reconstruction and 3D deep convolutional neural networks.</p>
+    <p class="ref-meta">Altae AA, et al.. <em>Scientific Reports</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41286001/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">185</span>
+  <div class="ref-body">
+    <p class="ref-title">Automatic detection and prediction of COVID-19 in cough audio signals using coronavirus herd immunity optimizer algorithm.</p>
+    <p class="ref-meta">Ayappan G, Anila S. <em>Scientific Reports</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/39824893/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">186</span>
+  <div class="ref-body">
+    <p class="ref-title">Respiratory Diseases Diagnosis Using Audio Analysis and Artificial Intelligence: A Systematic Review.</p>
+    <p class="ref-meta">Kapetanidis P, et al.. <em>Sensors (Basel)</em>, 2024. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/38400330/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">187</span>
+  <div class="ref-body">
+    <p class="ref-title">Reliability of crowdsourced data and patient-reported outcome measures in cough-based COVID-19 screening.</p>
+    <p class="ref-meta">Xiong H, et al.. <em>Scientific Reports</em>, 2022. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/36539519/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">188</span>
+  <div class="ref-body">
+    <p class="ref-title">An explainable COVID-19 detection system based on human sounds.</p>
+    <p class="ref-meta">Li H, et al.. <em>Smart Health (Amsterdam)</em>, 2022. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/36275047/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">189</span>
+  <div class="ref-body">
+    <p class="ref-title">Design and development of hybrid optimization enabled deep learning model for COVID-19 detection with comparative analysis with DCNN, BIAT-GRU, XGBoost.</p>
+    <p class="ref-meta">Dar JA, et al.. <em>Computers in Biology and Medicine</em>, 2022. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/36228465/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">190</span>
+  <div class="ref-body">
+    <p class="ref-title">DKPNet41: Directed knight pattern network-based cough sound classification model for automatic disease diagnosis.</p>
+    <p class="ref-meta">Kuluozturk M, et al.. <em>Medical Engineering &amp; Physics</em>, 2022. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/35989223/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">191</span>
+  <div class="ref-body">
+    <p class="ref-title">The Acoustic Dissection of Cough: Diving Into Machine Listening-based COVID-19 Analysis and Detection.</p>
+    <p class="ref-meta">Ren Z, et al.. <em>Journal of Voice</em>, 2022. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/35835648/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">192</span>
+  <div class="ref-body">
+    <p class="ref-title">A systematic review on cough sound analysis for Covid-19 diagnosis and screening: is my cough sound COVID-19?.</p>
+    <p class="ref-meta">Santosh KC, et al.. <em>PeerJ Computer Science</em>, 2022. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/35634112/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">193</span>
+  <div class="ref-body">
+    <p class="ref-title">Past and Trends in Cough Sound Acquisition, Automatic Detection and Automatic Classification: A Comparative Review.</p>
+    <p class="ref-meta">Serrurier A, et al.. <em>Sensors (Basel)</em>, 2022. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/35458885/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">194</span>
+  <div class="ref-body">
+    <p class="ref-title">Asthma Detection Research Based on Voice Signal Processing and Machine Learning.</p>
+    <p class="ref-meta">Li T, et al.. <em>Journal of Visualized Experiments</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/40788935/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">195</span>
+  <div class="ref-body">
+    <p class="ref-title">Non-invasive acoustic classification of adult asthma using an XGBoost model with vocal biomarkers.</p>
+    <p class="ref-meta">Lyu Y, et al.. <em>Scientific Reports</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/40770052/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">196</span>
+  <div class="ref-body">
+    <p class="ref-title">Phonatory Symptoms and Acoustic Findings in Patients with Asthma: A Cross-Sectional Controlled Study.</p>
+    <p class="ref-meta">Hamdan AL, et al.. <em>Indian Journal of Otolaryngology and Head and Neck Surgery</em>, 2016. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/28239577/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">197</span>
+  <div class="ref-body">
+    <p class="ref-title">Acoustic analysis in asthmatics and the influence of inhaled corticosteroid therapy.</p>
+    <p class="ref-meta">Bhalla RK, et al.. <em>Journal of Voice</em>, 2008. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/18346871/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">198</span>
+  <div class="ref-body">
+    <p class="ref-title">Breathing and speech patterns for predictive modelling of exacerbations of asthma and COPD.</p>
+    <p class="ref-meta">Najda M, et al.. <em>Respiratory Medicine</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42025816/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">199</span>
+  <div class="ref-body">
+    <p class="ref-title">COVID-19 activity screening by a smart-data-driven multi-band voice analysis.</p>
+    <p class="ref-meta">Silva G, et al.. <em>Journal of Voice</em>, 2022. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/36464573/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">200</span>
+  <div class="ref-body">
+    <p class="ref-title">Cough biomarkers for diagnosis and monitoring of respiratory disease: a systematic review.</p>
+    <p class="ref-meta">Xu J, et al.. <em>European Respiratory Review</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42342266/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">201</span>
+  <div class="ref-body">
+    <p class="ref-title">Respiratory sound-based AI screening of asthma and COPD via multi-feature fusion and CatBoost classification.</p>
+    <p class="ref-meta">Rashid J, et al.. <em>Scientific Reports</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42225794/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">202</span>
+  <div class="ref-body">
+    <p class="ref-title">Machine learning-based study of breath sounds in children with asthma in remission and cough variant asthma.</p>
+    <p class="ref-meta">Hu C, et al.. <em>BMC Medical Informatics and Decision Making</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42121121/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li>
+  </ul>
+</section>
+<section class="category" id="cardiovascular">
+  <div class="category-head">
+    <h2>Cardiovascular &amp; Cardiometabolic</h2>
+    <span class="category-count">19 references</span>
+  </div>
+  <ul class="ref-list">
+    <li class="ref">
+  <span class="ref-n">203</span>
+  <div class="ref-body">
+    <p class="ref-title">Voice Signal Characteristics Are Independently Associated With Coronary Artery Disease.</p>
+    <p class="ref-meta">Maor E, Sara JD, Orbelo DM, et al.. <em>Mayo Clinic Proceedings</em>, 2018. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/29656789/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">204</span>
+  <div class="ref-body">
+    <p class="ref-title">Non-invasive vocal biomarker is associated with pulmonary hypertension.</p>
+    <p class="ref-meta">Sara JDS, Maor E, Borlaug B, Lewis BR, et al.. <em>PLoS One</em>, 2020. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/32298301/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">205</span>
+  <div class="ref-body">
+    <p class="ref-title">Guess What We Can Hear—Novel Voice Biomarkers for the Remote Detection of Disease.</p>
+    <p class="ref-meta">Sara JDS, Orbelo DM, Maor E, Lerman A, et al.. <em>Mayo Clinic Proceedings</em>, 2023. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/37661144/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">206</span>
+  <div class="ref-body">
+    <p class="ref-title">Acoustic features are independently associated with heart failure and pulmonary hypertension.</p>
+    <p class="ref-meta">Sara JDS, Ishikawa K, Li, Anisuzzaman, et al.. <em>ESC Heart Failure</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/40296379/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">207</span>
+  <div class="ref-body">
+    <p class="ref-title">Remote Speech Analysis in the Evaluation of Hospitalized Patients With Acute Decompensated Heart Failure.</p>
+    <p class="ref-meta">Amir O, Abraham WT, Azzam ZS, et al.. <em>JACC: Heart Failure</em>, 2021. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/34969496/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">208</span>
+  <div class="ref-body">
+    <p class="ref-title">Trends in voice characteristics in patients with heart failure (VENTURE) in Switzerland: Protocol for a longitudinal observational pilot study.</p>
+    <p class="ref-meta">Wu F, Nägele M, Cleres D, et al.. <em>PLoS One</em>, 2023. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/37018236/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">209</span>
+  <div class="ref-body">
+    <p class="ref-title">Vocal biomarkers in heart failure—design, rationale and baseline characteristics of the AHF-Voice study.</p>
+    <p class="ref-meta">Kerwagen F, Bauser, Baur, Kraus, et al.. <em>Frontiers in Digital Health</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/40385312/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">210</span>
+  <div class="ref-body">
+    <p class="ref-title">Remote monitoring in heart failure: artificial intelligence and the use of remote speech analysis to detect worsening heart failure events.</p>
+    <p class="ref-meta">Abraham JD, Abraham WT. <em>Heart Failure Reviews</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/40425974/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">211</span>
+  <div class="ref-body">
+    <p class="ref-title">The machine learning-based prediction of the sound pressure level from pathological and healthy speech signals.</p>
+    <p class="ref-meta">Kodali M, Kadiri SR, Narayanan S, Alku P. <em>Journal of the Acoustical Society of America</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/40079770/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">212</span>
+  <div class="ref-body">
+    <p class="ref-title">How voice biomarkers have been used in heart failure management: a scoping review.</p>
+    <p class="ref-meta">Yang, Chen, Han, Yu, et al.. <em>Current Medical Research and Opinion</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41195460/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">213</span>
+  <div class="ref-body">
+    <p class="ref-title">The voice of decompensation: an explainable machine learning approach to assessing heart failure severity.</p>
+    <p class="ref-meta">Yang, Zhao, Ying, Han, et al.. <em>European Journal of Cardiovascular Nursing</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41495965/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">214</span>
+  <div class="ref-body">
+    <p class="ref-title">Speech Signal Parameters as Biomarkers for Remote Monitoring of Patients with Chronic Heart Failure.</p>
+    <p class="ref-meta">Konyukhov VN, Garanin AA, Kolsanov AV. <em>Kardiologiia</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41531354/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">215</span>
+  <div class="ref-body">
+    <p class="ref-title">When AI enters nursing practice: reflections based on a study using voice biomarkers in heart failure monitoring.</p>
+    <p class="ref-meta">Allemann H. <em>European Journal of Cardiovascular Nursing</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41873163/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">216</span>
+  <div class="ref-body">
+    <p class="ref-title">Voice recognition as an innovative method to identify and monitor heart failure – a review.</p>
+    <p class="ref-meta">Fuller AS, Okwose NC, Charman SJ, et al.. <em>Heart Failure Reviews</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41989602/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">217</span>
+  <div class="ref-body">
+    <p class="ref-title">Multimodal deep learning for cardiovascular disease detection using pulse wave and vocal signals: a prediction model development and validation study.</p>
+    <p class="ref-meta">Lyu Y, Wu HM, Chen R, et al.. <em>BMC Medical Informatics and Decision Making</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42032577/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">218</span>
+  <div class="ref-body">
+    <p class="ref-title">Voice features and deep learning models for identifying acute decompensated heart failure.</p>
+    <p class="ref-meta">Lee J, Kim G, Ham I, et al.. <em>Digital Health</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42221508/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">219</span>
+  <div class="ref-body">
+    <p class="ref-title">Efficacy of a Voice Biomarker for the Prediction of Heart Failure Hospitalisation: Results from the Telemedical Interventional Management in Heart Failure III (TIM-HF3) Voice Study.</p>
+    <p class="ref-meta">Riehle L, Goetz A, Koehler K, et al.. <em>European Journal of Heart Failure</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42311185/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">220</span>
+  <div class="ref-body">
+    <p class="ref-title">Non-invasive classification of stable HFpEF using a deep learning model trained on acoustic features of sustained vowels.</p>
+    <p class="ref-meta">Lyu Y, Jiang QC, Wu HM, et al.. <em>Biomedical Engineering Online</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42387638/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">221</span>
+  <div class="ref-body">
+    <p class="ref-title">A pilot study on AI-based voice analysis for monitoring patients hospitalized with acute decompensated heart failure.</p>
+    <p class="ref-meta">Riehle L, Fouad M, Hott M, et al.. <em>European Heart Journal – Digital Health</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42396380/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li>
+  </ul>
+</section>
+<section class="category" id="womens-health">
+  <div class="category-head">
+    <h2>Women's Health &amp; Hormonal</h2>
+    <span class="category-count">25 references</span>
+  </div>
+  <ul class="ref-list">
+    <li class="ref">
+  <span class="ref-n">222</span>
+  <div class="ref-body">
+    <p class="ref-title">Daily Laryngeal Kinematics and Acoustics Throughout the Menstrual Cycle: A Longitudinal Case Study.</p>
+    <p class="ref-meta">Kervin SR, Sun C, Warner G, Schwartz R, Johnson AM. <em>Journal of Voice</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41152080/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">223</span>
+  <div class="ref-body">
+    <p class="ref-title">Longitudinal Changes in Pitch-Related Acoustic Characteristics of the Voice Throughout the Menstrual Cycle: Observational Study.</p>
+    <p class="ref-meta">Kaufman J, Jeon J, Oreskovic J, Thommandram A, Fossat Y. <em>JMIR Formative Research</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/39791381/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">224</span>
+  <div class="ref-body">
+    <p class="ref-title">Blood Plasma Hormone-Level Influence on Vocal Function.</p>
+    <p class="ref-meta">Plexico LW, Sandage MJ, Kluess HA, Franco-Watkins AM, Neidert LE. <em>Journal of Speech, Language, and Hearing Research</em>, 2020. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/32402220/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">225</span>
+  <div class="ref-body">
+    <p class="ref-title">Fundamental Frequency Variations Across the Menstrual Cycle and the Use of an Oral Contraceptive Pill.</p>
+    <p class="ref-meta">Lã FMB, Polo N. <em>Journal of Speech, Language, and Hearing Research</em>, 2020. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/32293943/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">226</span>
+  <div class="ref-body">
+    <p class="ref-title">Vocal Acoustic and Auditory-Perceptual Characteristics During Fluctuations in Estradiol Levels During the Menstrual Cycle: A Longitudinal Study.</p>
+    <p class="ref-meta">Arruda P, Diniz da Rosa MR, Almeida LNA, et al.. <em>Journal of Voice</em>, 2018. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/29525075/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">227</span>
+  <div class="ref-body">
+    <p class="ref-title">Menstrual Cycle, Vocal Performance, and Laryngeal Vascular Appearance: An Observational Study on 17 Subjects.</p>
+    <p class="ref-meta">Shoffel-Havakuk H, Carmel-Neiderman NN, Halperin D, et al.. <em>Journal of Voice</em>, 2017. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/28596097/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">228</span>
+  <div class="ref-body">
+    <p class="ref-title">The Effect of Menstrual Cycle on Singing Voice: A Systematic Review.</p>
+    <p class="ref-meta">Gunjawate DR, Aithal VU, Ravi R, Venkatesh BT. <em>Journal of Voice</em>, 2016. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/27234008/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">229</span>
+  <div class="ref-body">
+    <p class="ref-title">Voice and speech changes in various phases of menstrual cycle.</p>
+    <p class="ref-meta">Çelik Ö, Çelik A, Ateşpare A, et al.. <em>Journal of Voice</em>, 2013. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/23497797/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">230</span>
+  <div class="ref-body">
+    <p class="ref-title">Do women's voices provide cues of the likelihood of ovulation? The importance of sampling regime.</p>
+    <p class="ref-meta">Fischer J, Semple S, Fickenscher G, et al.. <em>PLoS One</em>, 2011. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/21957453/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">231</span>
+  <div class="ref-body">
+    <p class="ref-title">Testosterone-Related Voice Change in Cisgender Women: A Survey of Prescribers and Voice Clinicians.</p>
+    <p class="ref-meta">Varghese JR, Procter T, Prabhakar AR, et al.. <em>Journal of Voice</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42711188/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">232</span>
+  <div class="ref-body">
+    <p class="ref-title">Female Patients with Reinke's Edema: The Effect of Menopause Status on Voice-Related Disease Severity.</p>
+    <p class="ref-meta">Hamdan AL, Ghzayel L, Semaan ZM, et al.. <em>Journal of Voice</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42692864/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">233</span>
+  <div class="ref-body">
+    <p class="ref-title">Effect of Hormonal Changes in Pre and Post-Menopausal Women Related Acoustical Voice Markers.</p>
+    <p class="ref-meta">Bhatia D, Das K, Shabong R, Acharjee T, Nongrum HB. <em>Indian Journal of Otolaryngology and Head and Neck Surgery</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/40321388/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">234</span>
+  <div class="ref-body">
+    <p class="ref-title">What Voice-Related Metrics Change With Menopause? A Systematic Review and Meta-Analysis Study.</p>
+    <p class="ref-meta">Lã FMB, Ardura D. <em>Journal of Voice</em>, 2020. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/32660847/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">235</span>
+  <div class="ref-body">
+    <p class="ref-title">Vocal Symptoms and Acoustic Findings in Menopausal Women in Comparison to Pre-menopause Women with Body Mass Index as a Confounding Variable.</p>
+    <p class="ref-meta">Hamdan AL, Ziade G, Tabet G, et al.. <em>Journal of Menopausal Medicine</em>, 2017. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/28951860/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">236</span>
+  <div class="ref-body">
+    <p class="ref-title">Effect of Hormonal Replacement Therapy on Voice.</p>
+    <p class="ref-meta">Hamdan AL, Tabet G, Fakhri G, Sarieddine D, Btaiche R, Seoud M. <em>Journal of Voice</em>, 2017. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/28359642/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">237</span>
+  <div class="ref-body">
+    <p class="ref-title">Functional Voice Testing Detects Early Changes in Vocal Pitch in Women During Testosterone Administration.</p>
+    <p class="ref-meta">Huang G, Pencina KM, Coady JA, Beleva YM, Bhasin S, Basaria S. <em>Journal of Clinical Endocrinology and Metabolism</em>, 2015. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/25875779/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">238</span>
+  <div class="ref-body">
+    <p class="ref-title">The impact of hormone therapy on vocal quality in postmenopausal women.</p>
+    <p class="ref-meta">D'haeseleer E, Depypere H, Claeys S, Baudonck N, Van Lierde K. <em>Journal of Voice</em>, 2012. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/22578434/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">239</span>
+  <div class="ref-body">
+    <p class="ref-title">The impact of menopause on vocal quality.</p>
+    <p class="ref-meta">D'haeseleer E, Depypere H, Claeys S, Wuyts FL, De Ley S, Van Lierde KM. <em>Menopause</em>, 2011. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/21037486/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">240</span>
+  <div class="ref-body">
+    <p class="ref-title">Normal Pregnancy and Voice: A PRISMA-ScR Scoping Review of Laryngeal and Vocal Outcomes.</p>
+    <p class="ref-meta">Boyd JM, Williams JT, McGowan R, Kervin S, Kwak PE, Morse E. <em>The Laryngoscope</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42825795/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">241</span>
+  <div class="ref-body">
+    <p class="ref-title">Pregnancy and the Singing Voice: A Survey of What Singers Report.</p>
+    <p class="ref-meta">Harper S, Hazelton K, van Mersbergen M. <em>Journal of Voice</em>, 2022. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/35637057/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">242</span>
+  <div class="ref-body">
+    <p class="ref-title">Effect of sex hormones on human voice physiology: from childhood to senescence.</p>
+    <p class="ref-meta">Zamponi V, Mazzilli R, Mazzilli F, Fantini M. <em>Hormones (Athens)</em>, 2021. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/34046877/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">243</span>
+  <div class="ref-body">
+    <p class="ref-title">Clinical Characteristics of Women With Low Vocal Pitch During Pregnancy.</p>
+    <p class="ref-meta">Li X, Xu W. <em>Journal of Voice</em>, 2019. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/31350115/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">244</span>
+  <div class="ref-body">
+    <p class="ref-title">Acoustic and aerodynamic measures of the voice during pregnancy.</p>
+    <p class="ref-meta">Hancock AB, Gross HE. <em>Journal of Voice</em>, 2014. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/24934324/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">245</span>
+  <div class="ref-body">
+    <p class="ref-title">A multimodal feature fusion model integrating voice acoustic features and early key risk factors for early screening of postpartum depression: a prospective short-term longitudinal observational study.</p>
+    <p class="ref-meta">Han X, Yue C, Zhang X, et al.. <em>Frontiers in Public Health</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42712390/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">246</span>
+  <div class="ref-body">
+    <p class="ref-title">Multimodal Acoustic-Linguistic Machine Learning for Postpartum Depression Screening Using the Edinburgh Postnatal Depression Scale.</p>
+    <p class="ref-meta">Griffin J, Talbot BH, Larsen L, Grimm B. <em>Women's Health Reports</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42539323/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li>
+  </ul>
+</section>
+<section class="category" id="diabetes">
+  <div class="category-head">
+    <h2>Diabetes &amp; Metabolic Disease</h2>
+    <span class="category-count">20 references</span>
+  </div>
+  <ul class="ref-list">
+    <li class="ref">
+  <span class="ref-n">247</span>
+  <div class="ref-body">
+    <p class="ref-title">Dual-branch hierarchical fusion network for voice-based classification of type 2 diabetes mellitus using multi-vowel acoustic features.</p>
+    <p class="ref-meta">Jiang P, Zhang W, Li A, Li P. <em>Frontiers in Medical Technology</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42756065/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">248</span>
+  <div class="ref-body">
+    <p class="ref-title">Multi-Scale Cooperative Vowel Attention Strategy for Voice-Based Type 2 Diabetes Mellitus Detection.</p>
+    <p class="ref-meta">Jiang P, Tao H, Li A, Li P. <em>IEEE Journal of Biomedical and Health Informatics</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42623211/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">249</span>
+  <div class="ref-body">
+    <p class="ref-title">Study on the characteristics analysis and recognition method of vowels in patients with type Ⅱ diabetes.</p>
+    <p class="ref-meta">Tao H, et al.. <em>Frontiers in Digital Health</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42231939/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">250</span>
+  <div class="ref-body">
+    <p class="ref-title">Voice changes associated with stress and distress in people living with diabetes: Results from the Colive Voice study.</p>
+    <p class="ref-meta">Bour C, et al.. <em>PLOS Digital Health</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42672071/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">251</span>
+  <div class="ref-body">
+    <p class="ref-title">Vocal Shimmer: A Potential Clinical Biomarker for Gestational Diabetes.</p>
+    <p class="ref-meta">Hepkarsi S, Bildaci TB, Yavas Z. <em>Journal of Voice</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42191537/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">252</span>
+  <div class="ref-body">
+    <p class="ref-title">Listening to Hypoglycemia: Voice as a Biomarker for Detection of a Medical Emergency Using Machine Learning.</p>
+    <p class="ref-meta">Lehmann V, et al.. <em>Diabetes Care</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41251597/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">253</span>
+  <div class="ref-body">
+    <p class="ref-title">Voice-based prediction of prediabetes using classical machine learning models.</p>
+    <p class="ref-meta">Oreskovic J, et al.. <em>Frontiers in Clinical Diabetes and Healthcare</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41395633/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">254</span>
+  <div class="ref-body">
+    <p class="ref-title">A Novel Machine Learning-Driven Voice and Clinical Biomarkers Framework for Robust Prediction of Type 2 Diabetes Mellitus.</p>
+    <p class="ref-meta">Guo J, Peng W, Hu S, Lu D, Chen S. <em>Journal of Voice</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41087282/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">255</span>
+  <div class="ref-body">
+    <p class="ref-title">Optimizing Voice Sample Quantity and Recording Settings for the Prediction of Type 2 Diabetes Mellitus: Retrospective Study.</p>
+    <p class="ref-meta">Assadi A, Oreskovic J, Kaufman J, Fossat Y. <em>JMIR Biomedical Engineering</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/40577411/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">256</span>
+  <div class="ref-body">
+    <p class="ref-title">Impact of Audio Data Compression on Feature Extraction for Vocal Biomarker Detection: Validation Study.</p>
+    <p class="ref-meta">Oreskovic J, Kaufman J, Fossat Y. <em>JMIR Biomedical Engineering</em>, 2024. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/38875677/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">257</span>
+  <div class="ref-body">
+    <p class="ref-title">Exploring the impact of type II diabetes mellitus on voice quality.</p>
+    <p class="ref-meta">Saghiri MA, et al.. <em>European Archives of Oto-Rhino-Laryngology</em>, 2024. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/38319369/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">258</span>
+  <div class="ref-body">
+    <p class="ref-title">Effect of Diabetes Mellitus Type 2 on Voice: A Systematic Review and Meta-Analysis.</p>
+    <p class="ref-meta">Hamdan AL, et al.. <em>Folia Phoniatrica et Logopaedica</em>, 2023. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/37757764/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">259</span>
+  <div class="ref-body">
+    <p class="ref-title">Acoustic Analysis and Prediction of Type 2 Diabetes Mellitus Using Smartphone-Recorded Voice Segments.</p>
+    <p class="ref-meta">Kaufman JM, Thommandram A, Fossat Y. <em>Mayo Clinic Proceedings: Digital Health</em>, 2023. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/40206319/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">260</span>
+  <div class="ref-body">
+    <p class="ref-title">Speech biomarkers of risk factors for vascular dementia in people with mild cognitive impairment.</p>
+    <p class="ref-meta">Martínez-Nicolás I, Llorente TE, Martínez-Sánchez F, Meilán JJG. <em>Frontiers in Human Neuroscience</em>, 2022. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/36590068/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">261</span>
+  <div class="ref-body">
+    <p class="ref-title">The effect of type 1 diabetes mellitus on voice in pediatric patients.</p>
+    <p class="ref-meta">Kara I, et al.. <em>European Archives of Oto-Rhino-Laryngology</em>, 2022. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/35829805/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">262</span>
+  <div class="ref-body">
+    <p class="ref-title">Voice changes in reproductive disorders, thyroid disorders and diabetes: a review.</p>
+    <p class="ref-meta">Stogowska E, Kamiński KA, Ziółko B, Kowalska I. <em>Endocrine Connections</em>, 2022. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/35148272/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">263</span>
+  <div class="ref-body">
+    <p class="ref-title">[Optimization of an integrated approach to voice correction for endocrinopathies (analytical review)].</p>
+    <p class="ref-meta">Starostina SV, Statsenko YaA, Svistushkin VM. <em>Problemy Endokrinologii</em>, 2022. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/35488756/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">264</span>
+  <div class="ref-body">
+    <p class="ref-title">Disease related changes in vocal parameters of patients with type 2 diabetes mellitus.</p>
+    <p class="ref-meta">Gölaç H, Atalik G, Türkcan AK, Yilmaz M. <em>Logopedics, Phoniatrics, Vocology</em>, 2021. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/33970753/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">265</span>
+  <div class="ref-body">
+    <p class="ref-title">Instrumental Acoustic Voice Characteristics in Adults with Type 2 Diabetes.</p>
+    <p class="ref-meta">Pinyopodjanard S, et al.. <em>Journal of Voice</em>, 2019. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/31427120/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">266</span>
+  <div class="ref-body">
+    <p class="ref-title">Vocal characteristics in patients with type 2 diabetes mellitus.</p>
+    <p class="ref-meta">Hamdan AL, Jabbour J, Nassar J, Dahouk I, Azar ST. <em>European Archives of Oto-Rhino-Laryngology</em>, 2012. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/22302159/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li>
+  </ul>
+</section>
+<section class="category" id="other-neuro">
+  <div class="category-head">
+    <h2>Other Neurological &amp; Psychiatric Conditions</h2>
+    <span class="category-count">28 references</span>
+  </div>
+  <ul class="ref-list">
+    <li class="ref">
+  <span class="ref-n">267</span>
+  <div class="ref-body">
+    <p class="ref-title">Acoustic Features of Sustained Phonation for Schizophrenia Classification: A Feasibility Study.</p>
+    <p class="ref-meta">Jelić C, Jambrošić K, Lešić V, Orepić P. <em>Sensors (Basel)</em>, 2026. <span class="tag">Schizophrenia</span>
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42884395/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">268</span>
+  <div class="ref-body">
+    <p class="ref-title">Speech-based relapse prediction in psychosis using explainable AI: Protocol for the international multicentre observational TRUSTING study.</p>
+    <p class="ref-meta">Hüppi RM, Bautista L, Cecere G, et al.. <em>BMJ Open</em>, 2026. <span class="tag">Schizophrenia</span>
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42665342/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">269</span>
+  <div class="ref-body">
+    <p class="ref-title">An integrative NLP framework identifies multilevel linguistic phenotypes of schizophrenia across tasks.</p>
+    <p class="ref-meta">Nakamura H, Kano Y, Sugihara G, et al.. <em>Psychological Medicine</em>, 2026. <span class="tag">Schizophrenia</span>
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42333390/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">270</span>
+  <div class="ref-body">
+    <p class="ref-title">Online speech assessment of the psychotic spectrum: Exploring the relationship between overlapping acoustic markers of schizotypy, depression and anxiety.</p>
+    <p class="ref-meta">Olah J, Diederen K, Gibbs-Dean T, et al.. <em>Schizophrenia Research</em>, 2023. <span class="tag">Schizophrenia</span>
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/37080802/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">271</span>
+  <div class="ref-body">
+    <p class="ref-title">Vocal acoustic features may be objective biomarkers of negative symptoms in schizophrenia: A cross-sectional study.</p>
+    <p class="ref-meta">Zhao Q, Wang WQ, Fan HZ, et al.. <em>Schizophrenia Research</em>, 2022. <span class="tag">Schizophrenia</span>
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/36423443/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">272</span>
+  <div class="ref-body">
+    <p class="ref-title">Speech analysis and speech emotion recognition in mental disease: a scoping review.</p>
+    <p class="ref-meta">Lombardo C, Esposito G, Carbone S, Serrano S, Mento C. <em>Frontiers in Psychology</em>, 2025. <span class="tag">Schizophrenia</span>
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41280186/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">273</span>
+  <div class="ref-body">
+    <p class="ref-title">Acoustic analysis of vowel production in adults with autism spectrum disorder: beyond the notion of a unitary autistic voice.</p>
+    <p class="ref-meta">Georgiou GP, Paphiti M. <em>Frontiers in Psychology</em>, 2026. <span class="tag">Autism</span>
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42516204/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">274</span>
+  <div class="ref-body">
+    <p class="ref-title">Unstable or Stable? Prosodic Features and Voice Quality in Autism Spectrum Disorder: A Systematic Review and Meta-analysis.</p>
+    <p class="ref-meta">Song Y, Kuang C, Chen F. <em>Journal of Autism and Developmental Disorders</em>, 2026. <span class="tag">Autism</span>
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42287519/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">275</span>
+  <div class="ref-body">
+    <p class="ref-title">Quantifying vocal subsystems of adults with minimally verbal autism spectrum disorder.</p>
+    <p class="ref-meta">Quatieri TF, Talkar T, Williamson JR, et al.. <em>Frontiers in Human Neuroscience</em>, 2026. <span class="tag">Autism</span>
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41947870/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">276</span>
+  <div class="ref-body">
+    <p class="ref-title">Voice acoustics allow classifying autism spectrum disorder with high accuracy.</p>
+    <p class="ref-meta">Briend F, David C, Silleresi S, Malvy J, Ferré S, Latinus M. <em>Translational Psychiatry</em>, 2023. <span class="tag">Autism</span>
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/37422467/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">277</span>
+  <div class="ref-body">
+    <p class="ref-title">Acoustic Exaggeration Enhances Speech Discrimination in Young Autistic Children.</p>
+    <p class="ref-meta">Yu L, Ban L, Yi A, et al.. <em>Autism Research</em>, 2024. <span class="tag">Autism</span>
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/39731320/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">278</span>
+  <div class="ref-body">
+    <p class="ref-title">Different in different ways: A network-analysis approach to voice and prosody in Autism Spectrum Disorder.</p>
+    <p class="ref-meta">Weed E, Fusaroli R, Simmons E, Eigsti IM. <em>Language Learning and Development</em>, 2023. <span class="tag">Autism</span>
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/38486613/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">279</span>
+  <div class="ref-body">
+    <p class="ref-title">Toward a cumulative science of vocal markers of autism: A cross-linguistic meta-analysis-based investigation of acoustic markers in American and Danish autistic children.</p>
+    <p class="ref-meta">Fusaroli R, Grossman R, Bilenberg N, Cantio C, Jepsen JRM, Weed E. <em>Autism Research</em>, 2021. <span class="tag">Autism</span>
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/34957701/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">280</span>
+  <div class="ref-body">
+    <p class="ref-title">Feasibility study on a noninvasive assessment of ALS patient emotional state.</p>
+    <p class="ref-meta">Garbey M, Lesport Q, Öztosun G, et al.. <em>Frontiers in Digital Health</em>, 2026. <span class="tag">ALS</span>
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42666334/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">281</span>
+  <div class="ref-body">
+    <p class="ref-title">Biomechanical Voice Parameters as Potential Biomarkers for Phenotype Differentiation in Amyotrophic Lateral Sclerosis: A Cross-Sectional Study.</p>
+    <p class="ref-meta">Pérez-Bonilla M, Mora-Ortiz M, Díaz-Borrego P, et al.. <em>Medical Sciences (Basel)</em>, 2026. <span class="tag">ALS</span>
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41892827/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">282</span>
+  <div class="ref-body">
+    <p class="ref-title">Acoustic Voice Analysis as a Useful Tool to Discriminate Different ALS Phenotypes.</p>
+    <p class="ref-meta">Milella G, Sciancalepore D, Cavallaro G, et al.. <em>Biomedicines</em>, 2023. <span class="tag">ALS</span>
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/37760880/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">283</span>
+  <div class="ref-body">
+    <p class="ref-title">Acoustic Change Over Time in Spastic and/or Flaccid Dysarthria in Motor Neuron Diseases.</p>
+    <p class="ref-meta">Lévêque N, Slis A, Lancia L, Bruneteau G, Fougeron C. <em>Journal of Speech, Language, and Hearing Research</em>, 2022. <span class="tag">ALS</span>
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/35412848/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">284</span>
+  <div class="ref-body">
+    <p class="ref-title">Characterizing vocal tremor in progressive neurological diseases via automated acoustic analyses.</p>
+    <p class="ref-meta">Hlavnička J, Tykalová T, Ulmanová O, et al.. <em>Clinical Neurophysiology</em>, 2020. <span class="tag">ALS</span>
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/32146096/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">285</span>
+  <div class="ref-body">
+    <p class="ref-title">Discriminating Relapsing-Remitting From Progressive Multiple Sclerosis Using Multidimensional Speech Biomarkers: An Independent Cohort Validation Study.</p>
+    <p class="ref-meta">Delgado Hernández J, Betancort Montesinos M, Romero Arias T, Hernández Pérez MÁ. <em>Journal of Voice</em>, 2026. <span class="tag">Multiple Sclerosis</span>
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42185120/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">286</span>
+  <div class="ref-body">
+    <p class="ref-title">Association Between Acoustic Speech Measures and Disability in Multiple Sclerosis: A Systematic Review and Meta-analysis.</p>
+    <p class="ref-meta">Hernández JD, Montesinos MB, Arias TR, Pérez MÁH. <em>Journal of Voice</em>, 2026. <span class="tag">Multiple Sclerosis</span>
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41764015/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">287</span>
+  <div class="ref-body">
+    <p class="ref-title">Screening speech disorders in progressive neurological diseases via long-term average spectrum.</p>
+    <p class="ref-meta">Svihlik J, Rusz J. <em>Journal of Neural Transmission</em>, 2026. <span class="tag">Multiple Sclerosis</span>
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42133017/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">288</span>
+  <div class="ref-body">
+    <p class="ref-title">Through the Speech and Vocal Signals Hidden Secrets: An Explainable Methodology for Neurological Diseases Early Detection.</p>
+    <p class="ref-meta">Vizza P, Di Ponio A, Timpano G, et al.. <em>Journal of Healthcare Informatics Research</em>, 2025. <span class="tag">Multiple Sclerosis</span>
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41230237/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">289</span>
+  <div class="ref-body">
+    <p class="ref-title">What speech can tell us: A systematic review of dysarthria characteristics in Multiple Sclerosis.</p>
+    <p class="ref-meta">Noffs G, Perera T, Kolbe SC, et al.. <em>Autoimmunity Reviews</em>, 2018. <span class="tag">Multiple Sclerosis</span>
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/30316992/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">290</span>
+  <div class="ref-body">
+    <p class="ref-title">Language biomarker screening using AI: a transdiagnostic approach to the brain.</p>
+    <p class="ref-meta">Themistocleous C, Stark BC. <em>Scientific Reports</em>, 2026. <span class="tag">Traumatic Brain Injury</span>
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41484307/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">291</span>
+  <div class="ref-body">
+    <p class="ref-title">Attention-based Deep Feature Fusion for Automated Dysarthria Severity Classification: A Speech-based Computational Functional Marker Relevant to Neurovascular and Neurodegenerative Conditions.</p>
+    <p class="ref-meta">Kumar SA, Sasikala S. <em>Current Neurovascular Research</em>, 2026. <span class="tag">Traumatic Brain Injury</span>
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42136283/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">292</span>
+  <div class="ref-body">
+    <p class="ref-title">Dysarthria associated with traumatic brain injury: speaking rate and emphatic stress.</p>
+    <p class="ref-meta">Wang YT, Kent RD, Duffy JR, Thomas JE. <em>Journal of Communication Disorders</em>, 2005. <span class="tag">Traumatic Brain Injury</span>
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/15748726/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">293</span>
+  <div class="ref-body">
+    <p class="ref-title">Cognitive task demands and discourse performance after traumatic brain injury.</p>
+    <p class="ref-meta">Byom L, Turkstra LS. <em>International Journal of Language &amp; Communication Disorders</em>, 2016. <span class="tag">Traumatic Brain Injury</span>
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/27891725/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">294</span>
+  <div class="ref-body">
+    <p class="ref-title">Incidence and clinical presentation of dysarthria and dysphagia in the acute setting following paediatric traumatic brain injury.</p>
+    <p class="ref-meta">Morgan AT, Mageandran SD, Mei C. <em>Child: Care, Health and Development</em>, 2009. <span class="tag">Traumatic Brain Injury</span>
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/19320903/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li>
+  </ul>
+</section>
+<section class="category" id="cancer-pain-fatigue">
+  <div class="category-head">
+    <h2>Cancer, Pain &amp; Fatigue</h2>
+    <span class="category-count">22 references</span>
+  </div>
+  <ul class="ref-list">
+    <li class="ref">
+  <span class="ref-n">295</span>
+  <div class="ref-body">
+    <p class="ref-title">From voice biomarkers to telemedicine screening: developing and evaluating a voice-based AI model for laryngeal lesion detection using the Bridge2AI-Voice dataset.</p>
+    <p class="ref-meta">Jenkins PD, et al.. <em>Frontiers in Digital Health</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42459998/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">296</span>
+  <div class="ref-body">
+    <p class="ref-title">Voice as a biomarker: exploratory analysis for benign and malignant vocal fold lesions.</p>
+    <p class="ref-meta">Jenkins P, et al.. <em>Frontiers in Digital Health</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/40873766/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">297</span>
+  <div class="ref-body">
+    <p class="ref-title">Early Detection of Glottic Cancer Through Machine Learning and Acoustic Voice Analysis: A Systematic Review.</p>
+    <p class="ref-meta">Verma H, et al.. <em>Medical Sciences (Basel)</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42783454/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">298</span>
+  <div class="ref-body">
+    <p class="ref-title">Machine learning-powered audio-omics processing method as an auxiliary diagnostic approach for advanced nasopharyngeal carcinoma.</p>
+    <p class="ref-meta">You T, et al.. <em>BMC Cancer</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42343241/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">299</span>
+  <div class="ref-body">
+    <p class="ref-title">Acoustic Biomarkers Derived From Computerized Voice Analysis for Predicting Anterior Commissure Involvement and Survival in Laryngeal Carcinoma.</p>
+    <p class="ref-meta">Lu C, et al.. <em>Journal of Voice</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/40976719/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">300</span>
+  <div class="ref-body">
+    <p class="ref-title">Chemoradiotherapy versus transoral laser microsurgery for early T-stage (cT1-T2) hypopharyngeal cancer: A prospective randomized pilot study.</p>
+    <p class="ref-meta">Ye CN, et al.. <em>American Journal of Otolaryngology</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42710434/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">301</span>
+  <div class="ref-body">
+    <p class="ref-title">Analysis of clinical efficacy and quality of life in hypopharyngeal cancer patients undergoing laryngeal-preserving surgery.</p>
+    <p class="ref-meta">Deng J, et al.. <em>Frontiers in Oncology</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42591329/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">302</span>
+  <div class="ref-body">
+    <p class="ref-title">Longitudinal correlations of subjective, functional, and objective voice parameters following radiotherapy for early glottic carcinoma.</p>
+    <p class="ref-meta">Al-Rashidi AM, et al.. <em>European Archives of Oto-Rhino-Laryngology</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42026277/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">303</span>
+  <div class="ref-body">
+    <p class="ref-title">Long-Term Voice Outcomes After Trans-Oral Resection of Early Glottis Carcinoma.</p>
+    <p class="ref-meta">Woo P, Nourmahnad A, Laitman BM. <em>The Laryngoscope</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41982041/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">304</span>
+  <div class="ref-body">
+    <p class="ref-title">Functional Voice Restoration After Laryngeal Transplantation: A Multidisciplinary Protocol and Longitudinal Outcomes.</p>
+    <p class="ref-meta">Zeng B, et al.. <em>International Journal of Language &amp; Communication Disorders</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/41888875/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">305</span>
+  <div class="ref-body">
+    <p class="ref-title">Muscle Tension Dysphonia: A Sequeale of Chemoradiotherapy in Patients of Head and Neck Cancer.</p>
+    <p class="ref-meta">Sarin V, Sarin BC, Chatterjee A, Juneja A. <em>Indian Journal of Otolaryngology and Head and Neck Surgery</em>, 2023. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/37636687/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">306</span>
+  <div class="ref-body">
+    <p class="ref-title">Voice outcomes in patients with advanced laryngeal and hypopharyngeal cancer treated with chemo-radiotherapy.</p>
+    <p class="ref-meta">Álvarez-Marcos C, et al.. <em>Acta Otorhinolaryngologica Italica</em>, 2022. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/35880365/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">307</span>
+  <div class="ref-body">
+    <p class="ref-title">Acoustic analysis of voice in nonlaryngeal head and neck cancer patients post chemoradiotherapy.</p>
+    <p class="ref-meta">Radhakrishna N, et al.. <em>Journal of Cancer Research and Therapeutics</em>, 2017. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/28508843/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">308</span>
+  <div class="ref-body">
+    <p class="ref-title">Pre- and posttreatment voice and speech outcomes in patients with advanced head and neck cancer treated with chemoradiotherapy: expert listeners' and patient's perception.</p>
+    <p class="ref-meta">van der Molen L, et al.. <em>Journal of Voice</em>, 2011. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/22209059/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">309</span>
+  <div class="ref-body">
+    <p class="ref-title">Voice and swallowing in patients enrolled in a larynx preservation trial.</p>
+    <p class="ref-meta">Carrara-de Angelis E, Feher O, Barros AP, Nishimoto IN, Kowalski LP. <em>Archives of Otolaryngology–Head &amp; Neck Surgery</em>, 2003. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/12874074/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">310</span>
+  <div class="ref-body">
+    <p class="ref-title">Vocal fundamental frequency measures as a reflection of tumor response to chemotherapy in patients with advanced laryngeal cancer.</p>
+    <p class="ref-meta">Orlikoff RF, Kraus DH, Harrison LB, Ho ML, Gartner CJ. <em>Journal of Voice</em>, 1997. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/9075174/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">311</span>
+  <div class="ref-body">
+    <p class="ref-title">Beyond the jaw: vocal, oropharyngeal and cognitive-linguistic biomarkers for precision pain phenotyping in TMD.</p>
+    <p class="ref-meta">Adams-Mitchell CJ, et al.. <em>Journal of Oral &amp; Facial Pain and Headache</em>, 2026. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/42895003/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">312</span>
+  <div class="ref-body">
+    <p class="ref-title">Blood Lactate as a Metabolic Biomarker of Anaerobic Vocal Capacity: A Pilot Study.</p>
+    <p class="ref-meta">Morton-Jones ME, Kavazis AN, Sandage MJ. <em>Journal of Voice</em>, 2025. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/39880720/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">313</span>
+  <div class="ref-body">
+    <p class="ref-title">Harmonic-to-noise ratio as speech biomarker for fatigue: K-nearest neighbour machine learning algorithm.</p>
+    <p class="ref-meta">Gaur S, Kalani P, Mohan M. <em>Medical Journal, Armed Forces India</em>, 2023. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/39734876/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">314</span>
+  <div class="ref-body">
+    <p class="ref-title">Sleep deprivation detected by voice analysis.</p>
+    <p class="ref-meta">Thoret E, et al.. <em>PLoS Computational Biology</em>, 2024. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/38315733/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">315</span>
+  <div class="ref-body">
+    <p class="ref-title">A rapid, non-invasive method for fatigue detection based on voice information.</p>
+    <p class="ref-meta">Gao X, et al.. <em>Frontiers in Cell and Developmental Biology</em>, 2022. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/36176279/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li><li class="ref">
+  <span class="ref-n">316</span>
+  <div class="ref-body">
+    <p class="ref-title">Measuring Stress in Health Professionals Over the Phone Using Automatic Speech Analysis During the COVID-19 Pandemic: Observational Pilot Study.</p>
+    <p class="ref-meta">König A, et al.. <em>Journal of Medical Internet Research</em>, 2021. 
+      <a class="ref-link" href="https://pubmed.ncbi.nlm.nih.gov/33739930/" target="_blank" rel="noopener">PubMed &#8599;</a>
+    </p>
+  </div>
+</li>
+  </ul>
+</section>
+
+  <p class="footnote">
+    This bibliography was compiled from PubMed/MEDLINE search results and is provided for scientific
+    and clinical reference. Inclusion of a study does not constitute endorsement of its methodology or
+    conclusions by Amplifier Health, and this list does not represent clinical validation of any
+    Amplifier Health product. Categorization reflects the primary focus of each study; several studies
+    span more than one category. This page is updated periodically as new literature is published.
+  </p>
+
+  <footer class="page-footer">
+    <span>Amplifier Health &middot; Confidential</span>
+    <span>amplifierhealth.com/scientific</span>
+  </footer>
+</div>
